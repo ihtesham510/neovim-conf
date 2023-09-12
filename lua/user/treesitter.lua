@@ -1,9 +1,9 @@
-local status, autotag = pcall(require, "nvim-ts-autotag")
-if not status then
-	return
-end
-
-autotag.setup({})
+-- local status, autotag = pcall(require, "nvim-ts-autotag")
+-- if not status then
+-- 	return
+-- end
+--
+-- autotag.setup({})
 
 require("nvim-treesitter.configs").setup({
 	ensure_installed = { "c", "python", "rust", "typescript", "cmake" },
