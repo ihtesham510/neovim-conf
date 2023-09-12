@@ -84,7 +84,7 @@ keymap("n", "sk", "<cmd>Telescope keymaps<cr>", { desc = "Fuzzy find All keymaps
 keymap("n", "sC", "<cmd>Telescope command<cr>", { desc = "Fuzzy find All Commands" })
 keymap("n", "sc", "<cmd>Telescope colorscheme<cr>", { desc = "Fuzzy find All keymaps" })
 keymap("n", "sp", "<cmd>Telescope projects theme=dropdown<cr>", { desc = "Fuzzy find All keymaps" })
-keymap("n", "ss", "<cmd>Telescope file_browser theme=ivy<cr>", { desc = "Fuzzy find All keymaps" })
+keymap("n", "ss", "<cmd>Telescope file_browser theme=ivy<cr>", { desc = "Telescope File Browser" })
 keymap("n", "F", "<cmd>Telescope live_grep theme=ivy<cr>", { desc = "Find string in cwd" })
 keymap("n", "<leader>fw", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
 -- git
@@ -123,13 +123,13 @@ keymap("n", "<leader>ls", "<cmd>lua vim.lsp.buf.signature_help()<CR>", { desc = 
 keymap("n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", { desc = "Lsp setloclist" })
 
 -- Terminal --
-keymap("n", "<leader>tn", "<cmd>lua _NODE_TOGGLE()<cr>", opts, { desc = "Node toggle" })
-keymap("n", "<leader>tu", "<cmd>lua _NCDU_TOGGLE()<cr>", opts, { desc = "Ncdu toggle" })
-keymap("n", "<leader>th", "<cmd>lua _HTOP_TOGGLE()<cr>", opts, { desc = "HTOP toggle" })
-keymap("n", "<leader>tp", "<cmd>lua _PYTHON_TOGGLE()<cr>", opts, { desc = "python toggle" })
-keymap("n", "<leader>tf", "<cmd>ToggleTerm direction=float<cr>", opts, { desc = "Float terminal" })
-keymap("n", "<leader>th", "<cmd>ToggleTerm size=10 direction=horizontal<cr>", opts, { desc = "horizontal terminal" })
-keymap("n", "<leader>tv", "<cmd>ToggleTerm size=80 direction=vertical<cr>", opts, { desc = "vertical terminal" })
+keymap("n", "<leader>tn", "<cmd>lua _NODE_TOGGLE()<cr>", { desc = "Node toggle" })
+keymap("n", "<leader>tu", "<cmd>lua _NCDU_TOGGLE()<cr>", { desc = "Ncdu toggle" })
+keymap("n", "<leader>th", "<cmd>lua _HTOP_TOGGLE()<cr>", { desc = "HTOP toggle" })
+keymap("n", "<leader>tp", "<cmd>lua _PYTHON_TOGGLE()<cr>", { desc = "python toggle" })
+keymap("n", "<leader>tf", "<cmd>ToggleTerm direction=float<cr>", { desc = "Float terminal" })
+keymap("n", "<leader>th", "<cmd>ToggleTerm size=10 direction=horizontal<cr>", { desc = "horizontal terminal" })
+keymap("n", "<leader>tv", "<cmd>ToggleTerm size=80 direction=vertical<cr>", { desc = "vertical terminal" })
 
 -- Better terminal navigation
 -- keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)

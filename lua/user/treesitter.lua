@@ -6,7 +6,7 @@ end
 autotag.setup({})
 
 require("nvim-treesitter.configs").setup({
-	ensure_installed = { "c",  "python", "rust", "typescript",  "cmake" },
+	ensure_installed = { "c", "python", "rust", "typescript", "cmake" },
 	autotag = { enable = true },
 	sync_install = false,
 	context_commentstring = {
