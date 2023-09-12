@@ -38,15 +38,15 @@ keymap("n", "<A-j>", ":m .+1<CR>==", opts)
 keymap("n", "<A-k>", ":m .-2<CR>==", opts)
 
 keymap("n", "<leader>a", "<cmd>Alpha<cr>", opts)
-keymap("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", opts ,{desc = "NvimTree Toggle"})
-keymap("n", "<leader>w", "<cmd>w!<CR>",{desc = "Save file"})
-keymap("n", "<leader>q", "<cmd>q!<CR>",{desc = "Exit"})
+keymap("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", opts, { desc = "NvimTree Toggle" })
+keymap("n", "<leader>w", "<cmd>w!<CR>", { desc = "Save file" })
+keymap("n", "<leader>q", "<cmd>q!<CR>", { desc = "Exit" })
 keymap("n", "<leader>c", "<cmd>Bdelete!<CR>", { desc = "Close Tab" })
+keymap("n", ";", ":", opts)
 keymap(
 	"n",
 	"ff",
 	"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-	opts,
 	{ desc = "Telescope find_files" }
 )
 -- Insert --
@@ -106,33 +106,21 @@ keymap("n", "<leader>mm", "<cmd>Mason<cr>", { desc = "Open Mason" })
 keymap("n", "<leader>ml", "<cmd>MasonLog<cr>", { desc = "Open Mason Log" })
 keymap("n", "<leader>mu", "<cmd>MasonUpdate<cr>", { desc = "Update Language servers" })
 -- lsp
-keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts, { desc = "Go to declaration" })
-keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts, { desc = "Go to definition" })
+keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { desc = "Go to declaration" })
+keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { desc = "Go to definition" })
 keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts, { desc = "Lsp Hover" })
-keymap("n", "gI", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts, { desc = "Lsp implementation" })
-keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts, { desc = "Lsp references" })
-keymap("n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts, { desc = "Lsp diagnostic " })
-keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts, { desc = "Lsp Format " })
-keymap("n", "<leader>li", "<cmd>LspInfo<cr>", opts, { desc = "Lsp Info" })
-keymap("n", "<leader>lI", "<cmd>LspInstallInfo<cr>", opts, { desc = "Lsp Install Info" })
-keymap("n", "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts, { desc = "Lsp CodeAction" })
-keymap(
-	"n",
-	"<leader>lj",
-	"<cmd>lua vim.diagnostic.goto_next({buffer=0})<cr>",
-	opts,
-	{ desc = "Lsp diagnostic go to next" }
-)
-keymap(
-	"n",
-	"<leader>lk",
-	"<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>",
-	opts,
-	{ desc = "Lsp diagnostic go to prev" }
-)
-keymap("n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", opts, { desc = "Lsp Rename" })
-keymap("n", "<leader>ls", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts, { desc = "Lsp signature_help" })
-keymap("n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts, { desc = "Lsp setloclist" })
+keymap("n", "gI", "<cmd>lua vim.lsp.buf.implementation()<CR>", { desc = "Lsp implementation" })
+keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", { desc = "Lsp references" })
+keymap("n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", { desc = "Lsp diagnostic " })
+keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", { desc = "Lsp Format " })
+keymap("n", "<leader>li", "<cmd>LspInfo<cr>", { desc = "Lsp Info" })
+keymap("n", "<leader>lI", "<cmd>LspInstallInfo<cr>", { desc = "Lsp Install Info" })
+keymap("n", "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", { desc = "Lsp CodeAction" })
+keymap("n", "<leader>lj", "<cmd>lua vim.diagnostic.goto_next({buffer=0})<cr>", { desc = "Lsp diagnostic go to next" })
+keymap("n", "<leader>lk", "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>", { desc = "Lsp diagnostic go to prev" })
+keymap("n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", { desc = "Lsp Rename" })
+keymap("n", "<leader>ls", "<cmd>lua vim.lsp.buf.signature_help()<CR>", { desc = "Lsp signature_help" })
+keymap("n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", { desc = "Lsp setloclist" })
 
 -- Terminal --
 keymap("n", "<leader>tn", "<cmd>lua _NODE_TOGGLE()<cr>", opts, { desc = "Node toggle" })

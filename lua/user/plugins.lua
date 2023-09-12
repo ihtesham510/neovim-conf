@@ -61,7 +61,14 @@ return packer.startup(function(use)
 	use({ "folke/tokyonight.nvim", commit = "66bfc2e8f754869c7b651f3f47a2ee56ae557764" })
 	use({ "lunarvim/darkplus.nvim", commit = "13ef9daad28d3cf6c5e793acfc16ddbf456e1c83" })
 	use({ "bluz71/vim-nightfly-colors" })
-
+	use({ "rebelot/kanagawa.nvim" })
+	use({ "Mofiqul/vscode.nvim" })
+	use({ "navarasu/onedark.nvim" })
+	use({ "glepnir/oceanic-material" })
+	use({ "marcopaganini/termschool-vim-theme" })
+	use({ "TheNiteCoder/mountaineer.vim" })
+	use({ "dikiaap/minimalist" })
+	use({ "craftzdog/neosolarized.nvim" })
 	-- Cmp
 	use({ "hrsh7th/nvim-cmp", commit = "b0dff0ec4f2748626aae13f011d1a47071fe9abc" }) -- The completion plugin
 	use({ "hrsh7th/cmp-buffer", commit = "3022dbc9166796b644a841a02de8dd1cc1d311fa" }) -- buffer completions
@@ -78,6 +85,7 @@ return packer.startup(function(use)
 			})
 		end,
 	})
+	use({ "NvChad/nvim-colorizer.lua" })
 
 	-- Snippets
 	use({ "L3MON4D3/LuaSnip", commit = "8f8d493e7836f2697df878ef9c128337cbf2bb84" }) --snippet engine
@@ -107,7 +115,10 @@ return packer.startup(function(use)
 
 	-- Telescope
 	use({ "nvim-telescope/telescope.nvim", commit = "76ea9a898d3307244dce3573392dcf2cc38f340f" })
-
+	use({
+		"nvim-telescope/telescope-file-browser.nvim",
+		requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+	})
 	-- Treesitter
 	use({
 		"nvim-treesitter/nvim-treesitter",

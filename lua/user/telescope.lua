@@ -9,8 +9,8 @@ telescope.setup({
 	defaults = {
 		initial_mode = "normal",
 		file_ignore_patterns = { "node_modules" },
-		prompt_prefix = " ",
-		selection_caret = " ",
+		prompt_prefix = "   ",
+		selection_caret = "   ",
 		path_display = { "smart" },
 
 		mappings = {
@@ -99,4 +99,5 @@ telescope.setup({
 		-- }
 		-- please take a look at the readme of the extension you want to configure
 	},
+	telescope.load_extension("file_browser"),
 })

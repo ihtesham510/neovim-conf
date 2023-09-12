@@ -1,38 +1,31 @@
-local treesitter = require("nvim-treesitter")
-require("nvim-ts-autotag").setup()
--- configure treesitter
-treesitter.setup({ -- enable syntax highlighting
-  highlight = {
-    enable = true,
-  },
-  -- enable indentation
-  indent = { enable = true },
-  -- enable autotagging (w/ nvim-ts-autotag plugin)
-  autotag = { enable = true },
-  -- ensure these language parsers are installed
-  ensure_installed = {
-    "json",
-    "javascript",
-    "jsx",
-    "yaml",
-    "html",
-    "css",
-    "prisma",
-    "markdown",
-    "markdown_inline",
-    "svelte",
-    "graphql",
-    "bash",
-    "lua",
-    "vim",
-    "dockerfile",
-    "gitignore",
-  },
-  -- enable nvim-ts-context-commentstring plugin for commenting tsx and jsx
-  context_commentstring = {
-    enable = true,
-    enable_autocmd = false,
-  },
-  -- auto install above language parsers
-  auto_install = true,
+local status, autotag = pcall(require, "nvim-ts-autotag")
+if not status then
+	return
+end
+
+autotag.setup({})
+
+require("nvim-treesitter.configs").setup({
+	ensure_installed = { "c",  "python", "rust", "typescript",  "cmake" },
+	autotag = { enable = true },
+	sync_install = false,
+	context_commentstring = {
+		enable = true,
+		enable_autocmd = false,
+	},
+	auto_install = true,
+
+	highlight = {
+		enable = true,
+
+		disable = { "c", "rust" },
+		disable = function(lang, buf)
+			local max_filesize = 100 * 1024 -- 100 KB
+			local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+			if ok and stats and stats.size > max_filesize then
+				return true
+			end
+		end,
+		additional_vim_regex_highlighting = false,
+	},
 })
