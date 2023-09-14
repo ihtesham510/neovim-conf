@@ -69,6 +69,9 @@ return packer.startup(function(use)
 	use({ "TheNiteCoder/mountaineer.vim" })
 	use({ "dikiaap/minimalist" })
 	use({ "craftzdog/neosolarized.nvim" })
+	use({ "dasupradyumna/midnight.nvim" })
+	use({ "endel/vim-github-colorscheme" })
+	use({ "Shatur/neovim-ayu" })
 	-- Cmp
 	use({ "hrsh7th/nvim-cmp", commit = "b0dff0ec4f2748626aae13f011d1a47071fe9abc" }) -- The completion plugin
 	use({ "hrsh7th/cmp-buffer", commit = "3022dbc9166796b644a841a02de8dd1cc1d311fa" }) -- buffer completions
@@ -111,6 +114,25 @@ return packer.startup(function(use)
 			{ "hrsh7th/cmp-nvim-lsp" }, -- Required
 			{ "L3MON4D3/LuaSnip" }, -- Required
 		},
+	})
+	-- codeium
+	use({
+		"Exafunction/codeium.vim",
+		config = function()
+			-- Change '<C-g>' here to any keycode you like.
+			vim.keymap.set("i", "<C-g>", function()
+				return vim.fn["codeium#Accept"]()
+			end, { expr = true })
+			vim.keymap.set("i", "<c-;>", function()
+				return vim.fn["codeium#CycleCompletions"](1)
+			end, { expr = true })
+			vim.keymap.set("i", "<c-,>", function()
+				return vim.fn["codeium#CycleCompletions"](-1)
+			end, { expr = true })
+			vim.keymap.set("i", "<c-x>", function()
+				return vim.fn["codeium#Clear"]()
+			end, { expr = true })
+		end,
 	})
 
 	-- Telescope

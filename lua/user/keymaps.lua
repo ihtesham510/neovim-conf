@@ -28,6 +28,11 @@ keymap("n", "<C-Up>", ":resize -2<CR>", opts)
 keymap("n", "<C-Down>", ":resize +2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+-- Rename the Vairable
+keymap("n", "R", "<cmd>lua vim.lsp.buf.rename()<cr>", { desc = "Lsp Rename" })
+-- copy and delete file
+keymap("n", "<C-d>", "ggVGd", opts)
+keymap("n", "<C-c>", "ggVGy", opts)
 
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
@@ -44,10 +49,10 @@ keymap("n", "<leader>q", "<cmd>q!<CR>", { desc = "Exit" })
 keymap("n", "<leader>c", "<cmd>Bdelete!<CR>", { desc = "Close Tab" })
 keymap("n", ";", ":", opts)
 keymap(
-	"n",
-	"ff",
-	"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-	{ desc = "Telescope find_files" }
+  "n",
+  "ff",
+  "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false,hidden=true,})<cr>",
+  { desc = "Telescope find_files" }
 )
 -- Insert --
 -- Press jk fast to exit insert mode
@@ -72,16 +77,16 @@ keymap("x", "K", ":m '<-2<CR>gv=gv", opts)
 keymap("x", "<A-j>", ":m '>+1<CR>gv=gv", opts, { desc = "Move line up and down in visual_mode" })
 keymap("x", "<A-k>", ":m '<-2<CR>gv=gv", opts, { desc = "Move line up and down in visual_mode" })
 -- window manager
-keymap("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically
-keymap("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" }) -- split window horizontally
-keymap("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" }) -- make split windows equal width & height
-keymap("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" }) -- close current split window
+keymap("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })        -- split window vertically
+keymap("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" })      -- split window horizontally
+keymap("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" })         -- make split windows equal width & height
+keymap("n", "<leader>sc", "<cmd>close<CR>", { desc = "Close current split" })    -- close current split window
 -- Packer
-keymap("n", "<leader>ps", "<cmd>PackerStatus<CR>", { desc = "Packer Status" }) -- close current split window
+keymap("n", "<leader>ps", "<cmd>PackerStatus<CR>", { desc = "Packer Status" })   -- close current split window
 keymap("n", "<leader>pi", "<cmd>PackerInstall<CR>", { desc = "Packer Install" }) -- close current split window
-keymap("n", "<leader>pS", "<cmd>PackerSync<CR>", { desc = "Packer Sync" }) -- close current split window
-keymap("n", "<leader>pu", "<cmd>PackerUpdate<CR>", { desc = "Packer Update" }) -- close current split window
-keymap("n", "<leader>pc", "<cmd>PackerClean<CR>", { desc = "Packer Clean" }) -- close current split window
+keymap("n", "<leader>pS", "<cmd>PackerSync<CR>", { desc = "Packer Sync" })       -- close current split window
+keymap("n", "<leader>pu", "<cmd>PackerUpdate<CR>", { desc = "Packer Update" })   -- close current split window
+keymap("n", "<leader>pc", "<cmd>PackerClean<CR>", { desc = "Packer Clean" })     -- close current split window
 keymap("n", "<leader>pC", "<cmd>PackerCompile<CR>", { desc = "Packer Compile" }) -- close current split window
 -- Telescope
 keymap("n", "sr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" }, opts)
@@ -101,9 +106,9 @@ keymap("n", "<leader>gl", "<cmd>lua require 'gitsigns'.blame_line()<cr>", { desc
 keymap("n", "<leader>gp", "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", { desc = "Git Preview Hunk" })
 keymap("n", "<leader>gr", "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", { desc = "Git Reset Hunk" })
 keymap("n", "<leader>gR", "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", { desc = "Git Reset buffer" })
-keymap("n", "<leader>gs", "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", { desc = "Git Stage Hunks" })
+keymap("n", "gs", "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", { desc = "Git Stage Hunks" })
 keymap("n", "<leader>gu", "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", { desc = "Git Undo Stag Hunks" })
-keymap("n", "<leader>gS", "<cmd>Telescope git_status<cr>", { desc = "Git Status" })
+keymap("n", "<leader>gs", "<cmd>Telescope git_status<cr>", { desc = "Git Status" })
 keymap("n", "<leader>gb", "<cmd>Telescope git_branches<cr>", { desc = "Telescrope Git Branches" })
 keymap("n", "<leader>gc", "<cmd>Telescope git_commits<cr>", { desc = "Telescrope Git Commits" })
 keymap("n", "<leader>gd", "<cmd>Gitsigns diffthis HEAD<cr>", { desc = "Git Sign Diff " })
