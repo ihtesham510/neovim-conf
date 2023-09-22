@@ -1,3 +1,13 @@
+local status_mason, mason = pcall(require, "mason")
+if not status_mason then
+	return
+end
+local status_mason_lsp_config, mason_lsp_config = pcall(require, "mason-lspconfig")
+if not status_mason_lsp_config then
+	return
+end
+
+
 local servers = {
 	"sumneko_lua",
 	"cssls",
@@ -9,27 +19,30 @@ local servers = {
 	"eslint",
 	"yamlls",
 	"clangd",
+	"graphql",
+	"dockerls",
+	"omnisharp",
+	"remark_ls",
 }
 
 local settings = {
 	ui = {
 		border = "none",
 		icons = {
-			package_installed = "◍",
-			package_pending = "◍",
-			package_uninstalled = "◍",
+			package_installed = "✓ ",
+			package_pending = "➜ ",
+			package_uninstalled = "✗ ",
 		},
 	},
 	log_level = vim.log.levels.INFO,
 	max_concurrent_installers = 4,
 }
 
-require("mason").setup(settings)
-require("mason-lspconfig").setup({
+mason.setup(settings)
+mason_lsp_config.setup({
 	ensure_installed = servers,
 	automatic_installation = true,
 })
-
 local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_status_ok then
 	return

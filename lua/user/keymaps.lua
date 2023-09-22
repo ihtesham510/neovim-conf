@@ -43,6 +43,8 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("n", "<A-j>", ":m .+1<CR>==", opts)
 keymap("n", "<A-k>", ":m .-2<CR>==", opts)
 
+keymap("n","<leader>o","<cmd>SymbolsOutline<cr>")
+
 keymap("n", "<leader>a", "<cmd>Alpha<cr>", opts)
 keymap("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", opts, { desc = "NvimTree Toggle" })
 keymap("n", "<leader>w", "<cmd>w!<CR>", { desc = "Save file" })
@@ -78,16 +80,16 @@ keymap("x", "K", ":m '<-2<CR>gv=gv", opts)
 keymap("x", "<A-j>", ":m '>+1<CR>gv=gv", opts, { desc = "Move line up and down in visual_mode" })
 keymap("x", "<A-k>", ":m '<-2<CR>gv=gv", opts, { desc = "Move line up and down in visual_mode" })
 -- window manager
-keymap("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })        -- split window vertically
-keymap("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" })      -- split window horizontally
-keymap("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" })         -- make split windows equal width & height
-keymap("n", "<leader>sc", "<cmd>close<CR>", { desc = "Close current split" })    -- close current split window
+keymap("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically
+keymap("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" }) -- split window horizontally
+keymap("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" }) -- make split windows equal width & height
+keymap("n", "<leader>sc", "<cmd>close<CR>", { desc = "Close current split" }) -- close current split window
 -- Packer
-keymap("n", "<leader>ps", "<cmd>PackerStatus<CR>", { desc = "Packer Status" })   -- close current split window
+keymap("n", "<leader>ps", "<cmd>PackerStatus<CR>", { desc = "Packer Status" }) -- close current split window
 keymap("n", "<leader>pi", "<cmd>PackerInstall<CR>", { desc = "Packer Install" }) -- close current split window
-keymap("n", "<leader>pS", "<cmd>PackerSync<CR>", { desc = "Packer Sync" })       -- close current split window
-keymap("n", "<leader>pu", "<cmd>PackerUpdate<CR>", { desc = "Packer Update" })   -- close current split window
-keymap("n", "<leader>pc", "<cmd>PackerClean<CR>", { desc = "Packer Clean" })     -- close current split window
+keymap("n", "<leader>pS", "<cmd>PackerSync<CR>", { desc = "Packer Sync" }) -- close current split window
+keymap("n", "<leader>pu", "<cmd>PackerUpdate<CR>", { desc = "Packer Update" }) -- close current split window
+keymap("n", "<leader>pc", "<cmd>PackerClean<CR>", { desc = "Packer Clean" }) -- close current split window
 keymap("n", "<leader>pC", "<cmd>PackerCompile<CR>", { desc = "Packer Compile" }) -- close current split window
 -- Telescope
 keymap("n", "sr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" }, opts)
@@ -97,7 +99,7 @@ keymap("n", "sC", "<cmd>Telescope command<cr>", { desc = "Fuzzy find All Command
 keymap("n", "sc", "<cmd>Telescope colorscheme<cr>", { desc = "Fuzzy find All keymaps" })
 keymap("n", "sp", "<cmd>Telescope projects theme=dropdown<cr>", { desc = "Fuzzy find All keymaps" })
 keymap("n", "ss", "<cmd>Telescope file_browser theme=ivy<cr>", { desc = "Telescope File Browser" })
-keymap("n", "F", "<cmd>Telescope live_grep theme=ivy<cr>", { desc = "Find string in cwd" })
+keymap("n", "F", "<cmd>Telescope live_grep <cr>", { desc = "Find string in cwd" })
 keymap("n", "<leader>fw", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
 -- git
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<cr>", { desc = "Open lazygit" })
