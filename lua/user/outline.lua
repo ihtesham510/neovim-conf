@@ -1,7 +1,7 @@
--- local status, symbol_outline = pcall(require, "symbol-outline")
--- if not status then
--- 	return
--- end
+ local status, symbol_outline = pcall(require, "symbol-outline")
+ if not status then
+ 	return
+ end
 local symbols = {
 	File = { icon = "󰈙 ", hl = "@text.uri" },
 	Module = { icon = "", hl = "@namespace" },
@@ -33,7 +33,7 @@ local symbols = {
 	Fragment = { icon = "  ", hl = "@constant" },
 }
 
-require("symbols-outline").setup({
+symbol_outline.setup({
 	highlight_hovered_item = false,
 	show_guides = true,
 	auto_preview = false,
