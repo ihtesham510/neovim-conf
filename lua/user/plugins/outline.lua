@@ -1,9 +1,7 @@
 return {
-
   "simrat39/symbols-outline.nvim",
-
   config = function()
-    local symbol_outline = require("symbol-outline")
+    local symbol_outline = require("symbols-outline")
     local symbols = {
       File = { icon = "󰈙 ", hl = "@text.uri" },
       Module = { icon = "", hl = "@namespace" },
