@@ -84,13 +84,8 @@ keymap("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" }) -- spl
 keymap("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" }) -- split window horizontally
 keymap("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" }) -- make split windows equal width & height
 keymap("n", "<leader>sc", "<cmd>close<CR>", { desc = "Close current split" }) -- close current split window
--- Packer
-keymap("n", "<leader>ps", "<cmd>PackerStatus<CR>", { desc = "Packer Status" }) -- close current split window
-keymap("n", "<leader>pi", "<cmd>PackerInstall<CR>", { desc = "Packer Install" }) -- close current split window
-keymap("n", "<leader>pS", "<cmd>PackerSync<CR>", { desc = "Packer Sync" }) -- close current split window
-keymap("n", "<leader>pu", "<cmd>PackerUpdate<CR>", { desc = "Packer Update" }) -- close current split window
-keymap("n", "<leader>pc", "<cmd>PackerClean<CR>", { desc = "Packer Clean" }) -- close current split window
-keymap("n", "<leader>pC", "<cmd>PackerCompile<CR>", { desc = "Packer Compile" }) -- close current split window
+-- Lazy 
+keymap("n", "<leader>ll", "<cmd>Lazy<CR>", { desc = "Lazy Nvim" }) -- close current split window
 -- Telescope
 keymap("n", "sr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" }, opts)
 keymap("n", "se", "<cmd>ErrorLensTelescope<cr>", { desc = "Fuzzy find Errors" })
