@@ -43,7 +43,7 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("n", "<A-j>", ":m .+1<CR>==", opts)
 keymap("n", "<A-k>", ":m .-2<CR>==", opts)
 
-keymap("n","<leader>o","<cmd>SymbolsOutline<cr>")
+keymap("n", "<leader>o", "<cmd>SymbolsOutline<cr>")
 
 keymap("n", "<leader>a", "<cmd>Alpha<cr>", opts)
 keymap("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", opts, { desc = "NvimTree Toggle" })
@@ -54,7 +54,7 @@ keymap("n", ";", ":", opts)
 keymap(
   "n",
   "ff",
-  "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false,hidden=true,})<cr>",
+  "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{hidden=true})<cr>",
   { desc = "Telescope find_files" }
 )
 -- Insert --
