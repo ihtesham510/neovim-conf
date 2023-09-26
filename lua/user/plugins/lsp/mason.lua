@@ -16,6 +16,7 @@ return {
     local mason_null_ls = require("mason-null-ls")
     local servers = {
       "lua_ls",
+      "rust_analyzer",
       "cssls",
       "prismals",
       "svelte",

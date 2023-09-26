@@ -308,6 +308,11 @@ return {
         },
       },
     })
+    lspconfig["rust_analyzer"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+      filetypes = { "rust" },
+    })
 
     lspconfig["jsonls"].setup({
       capabilities = capabilities,
