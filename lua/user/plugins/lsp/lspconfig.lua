@@ -164,8 +164,6 @@ local schemas = {
   },
 }
 
-
-
 return {
   "neovim/nvim-lspconfig",
   event = { "BufReadPre", "BufNewFile" },
@@ -184,27 +182,49 @@ return {
 
     local opts = { noremap = true, silent = true }
     local on_attach = function(client, bufnr)
-      keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
-      keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-      keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-      keymap(bufnr, "n", "gI", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-      keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-      keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
-      keymap(bufnr, "n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr><cr>", opts)
-      keymap(bufnr, "n", "<leader>li", "<cmd>LspInfo<cr>", opts)
-      keymap(bufnr, "n", "<leader>lI", "<cmd>LspInstallInfo<cr>", opts)
-      keymap(bufnr, "n", "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
-      keymap(bufnr, "n", "<leader>lj", "<cmd>lua vim.diagnostic.goto_next({buffer=0})<cr>", opts)
-      keymap(bufnr, "n", "<leader>lk", "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>", opts)
-      keymap(bufnr, "n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
-      keymap(bufnr, "n", "<leader>ls", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-      keymap(bufnr, "n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+      opts.buffer = bufnr
+
+      -- set keybinds
+      opts.desc = "Show LSP references"
+      keymap.set("n", "gR", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
+
+      opts.desc = "Go to declaration"
+      keymap.set("n", "gD", vim.lsp.buf.declaration, opts) -- go to declaration
+
+      opts.desc = "Show LSP definitions"
+      keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts) -- show lsp definitions
+
+      opts.desc = "Show LSP implementations"
+      keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts) -- show lsp implementations
+
+      opts.desc = "Show LSP type definitions"
+      keymap.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", opts) -- show lsp type definitions
+
+      opts.desc = "See available code actions"
+      keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
+
+      opts.desc = "Smart rename"
+      keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts) -- smart rename
+
+      opts.desc = "Show buffer diagnostics"
+      keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts) -- show  diagnostics for file
+
+      opts.desc = "Show line diagnostics"
+      keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts) -- show diagnostics for line
+
+      opts.desc = "Go to previous diagnostic"
+      keymap.set("n", "[d", vim.diagnostic.goto_prev, opts) -- jump to previous diagnostic in buffer
+
+      opts.desc = "Go to next diagnostic"
+      keymap.set("n", "]d", vim.diagnostic.goto_next, opts) -- jump to next diagnostic in buffer
+
+      opts.desc = "Show documentation for what is under cursor"
+      keymap.set("n", "K", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
+
+      opts.desc = "Restart LSP"
+      keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
     end
-
-
     local capabilities = cmp_nvim_lsp.default_capabilities()
-
-
 
     local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
     for type, icon in pairs(signs) do
@@ -293,7 +313,7 @@ return {
       capabilities = capabilities,
       settings = {
         json = {
-          schemas = schemas
+          schemas = schemas,
         },
       },
       setup = {
