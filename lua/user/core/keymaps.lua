@@ -47,7 +47,7 @@ keymap("n", "<leader>o", "<cmd>SymbolsOutline<cr>")
 
 keymap("n", "<leader>a", "<cmd>Alpha<cr>", opts)
 keymap("n", "<leader>e", "<cmd>Neotree toggle<cr>", opts, { desc = "NvimTree Toggle" })
-keymap("n", "T", "<cmd>Neotree focus<cr>", opts, { desc = "NvimTree Toggle" })
+keymap("n", "t", "<cmd>Neotree focus<cr>", opts, { desc = "NvimTree Toggle" })
 keymap("n", "<leader>w", "<cmd>w!<CR>", { desc = "Save file" })
 keymap("n", "<leader>q", "<cmd>q!<CR>", { desc = "Exit" })
 keymap("n", "<leader>c", "<cmd>Bdelete!<CR>", { desc = "Close Tab" })
@@ -81,12 +81,12 @@ keymap("x", "K", ":m '<-2<CR>gv=gv", opts)
 keymap("x", "<A-j>", ":m '>+1<CR>gv=gv", opts, { desc = "Move line up and down in visual_mode" })
 keymap("x", "<A-k>", ":m '<-2<CR>gv=gv", opts, { desc = "Move line up and down in visual_mode" })
 -- window manager
-keymap("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically
-keymap("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" }) -- split window horizontally
-keymap("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" }) -- make split windows equal width & height
+keymap("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })     -- split window vertically
+keymap("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" })   -- split window horizontally
+keymap("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" })      -- make split windows equal width & height
 keymap("n", "<leader>sc", "<cmd>close<CR>", { desc = "Close current split" }) -- close current split window
--- Lazy 
-keymap("n", "<leader>ll", "<cmd>Lazy<CR>", { desc = "Lazy Nvim" }) -- close current split window
+-- Lazy
+keymap("n", "<leader>ll", "<cmd>Lazy<CR>", { desc = "Lazy Nvim" })            -- close current split window
 -- Telescope
 keymap("n", "sr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" }, opts)
 keymap("n", "se", "<cmd>ErrorLensTelescope<cr>", { desc = "Fuzzy find Errors" })
