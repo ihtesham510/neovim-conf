@@ -166,6 +166,11 @@ local schemas = {
 
 return {
   "neovim/nvim-lspconfig",
+  dartls = {
+    setup = {
+      cmd = { "dart", "language-server", "--protocol=lsp" },
+    },
+  },
   event = { "BufReadPre", "BufNewFile" },
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
@@ -181,6 +186,10 @@ return {
     local keymap = vim.keymap -- for conciseness
 
     local opts = { noremap = true, silent = true }
+    -- for dart_ls
+    lspconfig.dartls.setup({
+      cmd = { "dart", "language-server", "--protocol=lsp" },
+    })
     local on_attach = function(client, bufnr)
       opts.buffer = bufnr
 
