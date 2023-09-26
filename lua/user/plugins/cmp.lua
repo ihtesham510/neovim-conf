@@ -2,17 +2,17 @@ return {
   "hrsh7th/nvim-cmp",
   event = "InsertEnter",
   dependencies = {
-    "hrsh7th/cmp-buffer",                -- source for text in buffer
-    "hrsh7th/cmp-path",                  -- source for file system paths
-    "L3MON4D3/LuaSnip",                  -- snippet engine
-    "saadparwaiz1/cmp_luasnip",          -- for autocompletion
-    "rafamadriz/friendly-snippets",      -- useful snippets
-    "onsails/lspkind.nvim",              -- vs-code like pictograms
-    "neovim/nvim-lspconfig",             -- Required
-    "williamboman/mason.nvim",           -- Optional
+    "hrsh7th/cmp-buffer",              -- source for text in buffer
+    "hrsh7th/cmp-path",                -- source for file system paths
+    "L3MON4D3/LuaSnip",                -- snippet engine
+    "saadparwaiz1/cmp_luasnip",        -- for autocompletion
+    "rafamadriz/friendly-snippets",    -- useful snippets
+    "onsails/lspkind.nvim",            -- vs-code like pictograms
+    "neovim/nvim-lspconfig",           -- Required
+    "williamboman/mason.nvim",         -- Optional
     "williamboman/mason-lspconfig.nvim", -- Optional
-    "hrsh7th/nvim-cmp",                  -- Required
-    "hrsh7th/cmp-nvim-lsp",              -- Required
+    "hrsh7th/nvim-cmp",                -- Required
+    "hrsh7th/cmp-nvim-lsp",            -- Required
     "L3MON4D3/LuaSnip",
     "VonHeikemen/lsp-zero.nvim",
   },
@@ -26,10 +26,10 @@ return {
       symbol_map = {
         Text = "󰉿",
         Method = "󰆧",
-        Function = "󰊕",
+        Function = "",
         Constructor = "",
         Field = "󰜢",
-        Variable = "󰀫",
+        Variable = "[]",
         Class = "󰠱",
         Interface = "",
         Module = "",
@@ -45,7 +45,7 @@ return {
         Folder = "󰉋",
         EnumMember = "",
         Constant = "󰏿",
-        Struct = "󰙅",
+        Struct = "",
         Event = "",
         Operator = "󰆕",
         TypeParameter = "",
@@ -116,8 +116,8 @@ return {
       sources = cmp.config.sources({
         { name = "nvim_lsp" },
         { name = "luasnip" }, -- snippets
-        { name = "buffer" },  -- text within current buffer
-        { name = "path" },    -- file system paths
+        { name = "buffer" }, -- text within current buffer
+        { name = "path" }, -- file system paths
       }),
       -- configure lspkind for vs-code like pictograms in completion menu
       formatting = {
