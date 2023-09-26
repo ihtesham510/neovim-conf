@@ -146,7 +146,7 @@ return {
           ["s"] = "open_vsplit",
           -- ["S"] = "split_with_window_picker",
           -- ["s"] = "vsplit_with_window_picker",
-          ["t"] = "open_tabnew",
+          --["t"] = "open_tabnew",
           -- ["<cr>"] = "open_drop",
           -- ["t"] = "open_tab_drop",
           ["w"] = "open_with_window_picker",
