@@ -22,8 +22,6 @@ keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
-keymap("n", "E", "ge", opts)
-keymap("n", "q", "<cmd>close<cr>", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
@@ -44,21 +42,17 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("n", "<A-j>", ":m .+1<CR>==", opts)
 keymap("n", "<A-k>", ":m .-2<CR>==", opts)
 
-keymap("n", "<leader>o", "<cmd>SymbolsOutline<cr>")
-
+-- basic keymaps
 keymap("n", "<leader>a", "<cmd>Alpha<cr>", opts)
 keymap("n", "<leader>e", "<cmd>Neotree toggle<cr>", opts, { desc = "NvimTree Toggle" })
 keymap("n", "t", "<cmd>Neotree focus<cr>", opts, { desc = "NvimTree Toggle" })
+keymap("n", "E", "ge", opts)
 keymap("n", "<leader>w", "<cmd>w!<CR>", { desc = "Save file" })
+keymap("n", "<leader>o", "<cmd>SymbolsOutline<cr>")
 keymap("n", "<leader>q", "<cmd>q!<CR>", { desc = "Exit" })
 keymap("n", "<leader>c", "<cmd>Bdelete!<CR>", { desc = "Close Tab" })
 keymap("n", ";", ":", opts)
-keymap(
-  "n",
-  "ff",
-  "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{hidden=true})<cr>",
-  { desc = "Telescope find_files" }
-)
+
 -- Insert --
 -- Press jk fast to exit insert mode
 keymap("i", "jk", "<ESC>", opts)
@@ -75,7 +69,6 @@ keymap("v", "<A-j>", ":m '>+1<CR>gv=gv", opts)
 keymap("v", "<A-k>", ":m '<-2<CR>gv=gv", opts)
 keymap("v", "p", '"_dP', opts)
 
--- Visual Block --
 -- Move text up and down
 keymap("x", "J", ":m '>+1<CR>gv=gv", opts)
 keymap("x", "K", ":m '<-2<CR>gv=gv", opts)
@@ -85,10 +78,16 @@ keymap("x", "<A-k>", ":m '<-2<CR>gv=gv", opts, { desc = "Move line up and down i
 keymap("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })     -- split window vertically
 keymap("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" })   -- split window horizontally
 keymap("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" })      -- make split windows equal width & height
-keymap("n", "<leader>sc", "<cmd>close<CR>", { desc = "Close current split" }) -- close current split window
+keymap("n", "q", "<cmd>close<CR>", { desc = "Close current split" }) -- close current split window
 -- Lazy
 keymap("n", "<leader>ll", "<cmd>Lazy<CR>", { desc = "Lazy Nvim" })            -- close current split window
 -- Telescope
+keymap(
+  "n",
+  "ff",
+  "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{hidden=true})<cr>",
+  { desc = "Telescope find_files" }
+)
 keymap("n", "sr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" }, opts)
 keymap("n", "se", "<cmd>ErrorLensTelescope<cr>", { desc = "Fuzzy find Errors" })
 keymap("n", "sk", "<cmd>Telescope keymaps<cr>", { desc = "Fuzzy find All keymaps" })
@@ -97,7 +96,8 @@ keymap("n", "sc", "<cmd>Telescope colorscheme<cr>", { desc = "Fuzzy find All key
 keymap("n", "sp", "<cmd>Telescope projects theme=dropdown<cr>", { desc = "Fuzzy find All keymaps" })
 keymap("n", "ss", "<cmd>Telescope file_browser theme=ivy<cr>", { desc = "Telescope File Browser" })
 keymap("n", "F", "<cmd>Telescope live_grep <cr>", { desc = "Find string in cwd" })
-keymap("n", "<leader>fw", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
+keymap("v", "fw", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
+keymap("n", "fw", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
 -- git
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<cr>", { desc = "Open lazygit" })
 keymap("n", "<leader>gj", "<cmd>lua require 'gitsigns'.next_hunk()<cr>", { desc = "Git Next Hunk" })
