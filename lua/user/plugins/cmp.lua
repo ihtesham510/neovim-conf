@@ -3,6 +3,7 @@ return {
   event = "InsertEnter",
   dependencies = {
     "hrsh7th/cmp-buffer",              -- source for text in buffer
+    "jcha0713/cmp-tw2css",
     "hrsh7th/cmp-path",                -- source for file system paths
     "L3MON4D3/LuaSnip",                -- snippet engine
     "saadparwaiz1/cmp_luasnip",        -- for autocompletion
@@ -115,6 +116,7 @@ return {
       -- sources for autocompletion
       sources = cmp.config.sources({
         { name = "nvim_lsp" },
+        { name = "cmp-tw2css" },
         { name = "luasnip" }, -- snippets
         { name = "buffer" }, -- text within current buffer
         { name = "path" }, -- file system paths
