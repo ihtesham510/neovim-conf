@@ -12,4 +12,5 @@ return {
   "dikiaap/minimalist",
   "dasupradyumna/midnight.nvim",
   "Shatur/neovim-ayu",
+  "catppuccin/nvim",
 }
