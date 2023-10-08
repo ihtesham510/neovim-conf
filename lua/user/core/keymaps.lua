@@ -57,13 +57,15 @@ keymap("n", ";", ":", opts)
 -- Press jk fast to exit insert mode
 keymap("i", "jk", "<ESC>", opts)
 keymap("i", "kj", "<ESC>", opts)
-keymap("v", "q", "<ESC>", opts)
 
 -- Visual --
 -- Stay in indent mode
 keymap("v", "<", "<gv^", opts)
 keymap("v", ">", ">gv^", opts)
+keymap("v", "b", "ib", opts)
+keymap("v", "B", "iB", opts)
 keymap("v", "E", "ge", opts)
+keymap("v", "q", "<ESC>", opts)
 
 -- Move text up and down
 keymap("v", "<A-j>", ":m '>+1<CR>gv=gv", opts)
