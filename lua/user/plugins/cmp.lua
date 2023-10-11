@@ -115,6 +115,7 @@ return {
       },
       -- sources for autocompletion
       sources = cmp.config.sources({
+        { name = "crates" },
         { name = "nvim_lsp" },
         { name = "cmp-tw2css" },
         { name = "luasnip" }, -- snippets
