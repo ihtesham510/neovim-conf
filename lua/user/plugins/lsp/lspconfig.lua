@@ -253,6 +253,19 @@ return {
       on_attach = on_attach,
     })
 
+    -- configure toml server
+    lspconfig["taplo"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
+    -- configure sql 
+    lspconfig["sqlls"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
+
     -- configure css server
     lspconfig["cssls"].setup({
       capabilities = capabilities,

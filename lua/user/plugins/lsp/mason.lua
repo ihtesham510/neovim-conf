@@ -16,6 +16,8 @@ return {
     local mason_null_ls = require("mason-null-ls")
     local servers = {
       "lua_ls",
+      "taplo",
+      "sqlls",
       "rust_analyzer",
       "cssls",
       "prismals",
@@ -60,6 +62,7 @@ return {
         "prettier", -- ts/js formatter
         "stylua", -- lua formatter
         "eslint_d", -- ts/js linter
+        "sql-formatter"
       },
       -- auto-install configured servers (with lspconfig)
       automatic_installation = true,

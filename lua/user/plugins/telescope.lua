@@ -50,7 +50,7 @@ return {
             ["<Up>"] = actions.move_selection_previous,
 
             ["<CR>"] = actions.select_default,
-            ["<C-x>"] = actions.select_horizontal,
+            ["<C-h>"] = actions.select_horizontal,
             ["<C-v>"] = actions.select_vertical,
             ["<C-t>"] = actions.select_tab,
 
@@ -73,8 +73,8 @@ return {
             ["q"] = actions.close,
             ["<CR>"] = actions.select_default,
             ["l"] = actions.select_default,
-            ["<C-x>"] = actions.select_horizontal,
-            ["<C-v>"] = actions.select_vertical,
+            ["h"] = actions.select_horizontal,
+            ["s"] = actions.select_vertical,
             ["<C-t>"] = actions.select_tab,
             ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
             ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
