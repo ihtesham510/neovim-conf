@@ -19,22 +19,6 @@ local plugins = {
 		end,
 	},
 	{
-		"saecki/crates.nvim",
-		ft = { "rust", "toml" },
-		config = function(_, opts)
-			local crates = require("crates")
-			crates.setup(opts)
-			crates.setup({
-				src = {
-					cmp = {
-						enabled = true,
-					},
-				},
-			})
-			crates.show()
-		end,
-	},
-	{
 		"rust-lang/rust.vim",
 		ft = "rust",
 		init = function()
