@@ -259,12 +259,11 @@ return {
       on_attach = on_attach,
     })
 
-    -- configure sql 
+    -- configure sql
     lspconfig["sqlls"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })
-
 
     -- configure css server
     lspconfig["cssls"].setup({
@@ -332,11 +331,13 @@ return {
     })
     lspconfig["jsonls"].setup({
       capabilities = capabilities,
+      on_attach = on_attach,
       settings = {
         json = {
           schemas = schemas,
         },
       },
+      diagnostics = true,
       setup = {
         commands = {
           Format = {
