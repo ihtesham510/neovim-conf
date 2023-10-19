@@ -53,6 +53,7 @@ vim.wo.colorcolumn = "99999"
 -- vim.opt.listchars:append "eol:↴"
 return {
 	"lukas-reineke/indent-blankline.nvim",
+  version = "^2.20.8",
 	config = function()
 		local indent_blankline = require("indent_blankline")
 		indent_blankline.setup({
