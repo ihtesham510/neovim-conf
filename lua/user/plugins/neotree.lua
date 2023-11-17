@@ -110,11 +110,11 @@ return {
           required_width = 122, -- min width of window required to show this column
         },
         last_modified = {
-          enabled = true,
+          enabled = false,
           required_width = 88, -- min width of window required to show this column
         },
         created = {
-          enabled = true,
+          enabled = false,
           required_width = 110, -- min width of window required to show this column
         },
         symlink_target = {
