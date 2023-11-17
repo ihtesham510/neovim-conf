@@ -18,8 +18,8 @@ return {
 						["a="] = { query = "@assignment.outer", desc = "Select outer part of an assignment region" },
 						["i="] = { query = "@assignment.inner", desc = "Select inner part of an assignment region" },
 
-						["a:"] = { query = "@parameter.outer", desc = "Select outer part of a parameter/field region" },
-						["i:"] = { query = "@parameter.inner", desc = "Select inner part of a parameter/field region" },
+						["a;"] = { query = "@parameter.outer", desc = "Select outer part of a parameter/field region" },
+						["i;"] = { query = "@parameter.inner", desc = "Select inner part of a parameter/field region" },
 
 						["ai"] = { query = "@conditional.outer", desc = "Select outer part of a conditional region" },
 						["ii"] = { query = "@conditional.inner", desc = "Select inner part of a conditional region" },
