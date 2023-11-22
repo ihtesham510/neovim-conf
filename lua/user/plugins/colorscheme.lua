@@ -2,6 +2,7 @@ return {
   -- colorschemes
   "folke/tokyonight.nvim",
   "lunarvim/darkplus.nvim",
+  "craftzdog/solarized-osaka.nvim",
   "bluz71/vim-nightfly-colors",
   "rebelot/kanagawa.nvim",
   "Mofiqul/vscode.nvim",
