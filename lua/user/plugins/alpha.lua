@@ -41,6 +41,7 @@ return {
       dashboard.button("p", "  Find project", ":Telescope projects <CR>"),
       dashboard.button("r", "  Recently used files", ":Telescope oldfiles <CR>"),
       dashboard.button("t", "  Find text", ":Telescope live_grep <CR>"),
+      dashboard.button("l", "󰒲  Open Lazy", ":Lazy <CR>"),
       dashboard.button("c", "  Configuration", ":e $MYVIMRC <CR>"),
       dashboard.button("q", "󰗼  Quit Neovim", ":qa<CR>"),
     }
