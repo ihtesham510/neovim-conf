@@ -1,4 +1,5 @@
 return {
+	event = { "BufReadPost", "BufNewFile" },
   "gbprod/yanky.nvim",
   dependencies = { { "kkharji/sqlite.lua", enabled = not jit.os:find("Windows") } },
   opts = {
