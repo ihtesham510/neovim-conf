@@ -15,4 +15,5 @@ return {
   "Shatur/neovim-ayu",
   "catppuccin/nvim",
   "oxfist/night-owl.nvim",
+  "maxmx03/solarized.nvim",
 }
