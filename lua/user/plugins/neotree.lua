@@ -3,6 +3,7 @@ return {
   branch = "v3.x",
   cmd = "Neotree" ,
   dependencies = {
+  event = { "BufReadPre", "BufNewFile" },
     "nvim-lua/plenary.nvim",
     "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
     "MunifTanjim/nui.nvim",

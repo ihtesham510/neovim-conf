@@ -1,5 +1,6 @@
 return {
   "simrat39/symbols-outline.nvim",
+  event = { "BufReadPre", "BufNewFile" },
   config = function()
     local symbol_outline = require("symbols-outline")
     local symbols = {
@@ -67,5 +68,9 @@ return {
       symbol_blacklist = {},
       symbols = symbols,
     })
-  end
+  end,
+  key = {
+    "<leader>o",
+    "<cmd>SymbolsOutline<cr>"
+  }
 }
