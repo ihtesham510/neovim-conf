@@ -1,45 +1,89 @@
 return {
-	"stevearc/conform.nvim",
-	event = { "BufWritePre" },
-	cmd = { "ConformInfo" },
-	opts = {
-		formatters_by_ft = {
-			["lua"] = { "stylua" },
-			["javascript"] = { "prettier" },
-			["javascriptreact"] = { "prettier" },
-			["typescript"] = { "prettier" },
-			["typescriptreact"] = { "prettier" },
-			["vue"] = { "prettier" },
-			["css"] = { "prettier" },
-			["scss"] = { "prettier" },
-			["less"] = { "prettier" },
-			["html"] = { "prettier" },
-			["json"] = { "prettier" },
-			["jsonc"] = { "prettier" },
-			["yaml"] = { "prettier" },
-			["markdown"] = { "prettier" },
-			["markdown.mdx"] = { "prettier" },
-			["graphql"] = { "prettier" },
-			["handlebars"] = { "prettier" },
+	{
+		"stevearc/conform.nvim",
+		event = { "BufWritePre" },
+		cmd = { "ConformInfo" },
+		opts = {
+			formatters_by_ft = {
+				lua = { "stylua" },
+				["javascript"] = { "prettier" },
+				["javascriptreact"] = { "prettier" },
+				["typescript"] = { "prettier" },
+				["typescriptreact"] = { "prettier" },
+				["vue"] = { "prettier" },
+				["css"] = { "prettier" },
+				["scss"] = { "prettier" },
+				["less"] = { "prettier" },
+				["html"] = { "prettier" },
+				["json"] = { "prettier" },
+				["jsonc"] = { "prettier" },
+				["yaml"] = { "prettier" },
+				["markdown"] = { "prettier" },
+				["markdown.mdx"] = { "prettier" },
+				["graphql"] = { "prettier" },
+				["handlebars"] = { "prettier" },
+			},
+			formatters = {
+				injected = { options = { ignore_errors = true } },
+			},
+			main = "conform",
 		},
-		formatters = {
-			injected = { options = { ignore_errors = true } },
+		keys = {
+			{
+				"<leader>w",
+				function()
+					local cf = require("conform")
+					cf.format({ async = false, lsp_fallback = true })
+					vim.cmd([[w!]])
+				end,
+				desc = "Format and save",
+			},
 		},
-		main = "conform",
+		init = function()
+			-- If you want the formatexpr, here is the place to set it
+			vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
+		end,
 	},
-	keys = {
-		{
-			"<leader>w",
-			function()
-				local cf = require("conform")
-				cf.format({ async = false, lsp_fallback = true })
-				vim.cmd([[w!]])
-			end,
-			desc = "Format and save",
+	{
+		"windwp/nvim-ts-autotag",
+		ft = {
+			"html",
+			"javascript",
+			"typescript",
+			"javascriptreact",
+			"typescriptreact",
+			"svelte",
+			"vue",
+			"tsx",
+			"jsx",
+			"rescript",
+			"xml",
+			"php",
+			"markdown",
+			"glimmer",
+			"handlebars",
+			"hbs",
+		},
+		opts = {
+			enable = true,
+			filetypes = {
+				"html",
+				"javascript",
+				"typescript",
+				"javascriptreact",
+				"typescriptreact",
+				"svelte",
+				"vue",
+				"tsx",
+				"jsx",
+				"rescript",
+				"xml",
+				"php",
+				"markdown",
+				"glimmer",
+				"handlebars",
+				"hbs",
+			},
 		},
 	},
-	init = function()
-		-- If you want the formatexpr, here is the place to set it
-		vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
-	end,
 }
