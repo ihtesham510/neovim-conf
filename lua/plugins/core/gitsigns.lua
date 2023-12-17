@@ -1,6 +1,18 @@
 return {
 	"lewis6991/gitsigns.nvim",
 	event = { "BufReadPost", "BufNewFile" },
+  keys = {
+    {"gj","<cmd>lua require 'gitsigns'.next_hunk()<cr>",desc = "Git Next Hunk"},
+    {"gk","<cmd>lua require 'gitsigns'.prev_hunk()<cr>",desc = "Git Previous Hunk"},
+    {"gB","<cmd>lua require 'gitsigns'.blame_line()<cr>",desc = "Git Blame"},
+    {"gr","<cmd>lua require 'gitsigns'.reset_hunk()<cr>",desc = "Git Reset Hunk"},
+    {"gR","<cmd>lua require 'gitsigns'.reset_buffer()<cr>",desc = "Git Reset buffer"},
+    {"gs","<cmd>lua require 'gitsigns'.stage_hunk()<cr>",desc = "Git stage hunk"},
+    {"gu","<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>",desc = "git undostage hunk"},
+    {"gS","<cmd>Telescope git_status<cr>",desc = "Git Status"},
+    { "gb", "<cmd>Telescope git_branches<cr>", desc = "Checkout branch" },
+    { "gc", "<cmd>Telescope git_commits<cr>", desc = "Checkout commit" },
+  },
 	config = function()
 		require("gitsigns").setup({
 			signs = {
