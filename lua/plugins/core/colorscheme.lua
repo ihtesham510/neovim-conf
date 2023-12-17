@@ -15,6 +15,7 @@ return {
 				},
 			},
 		})
-		vim.cmd.colorscheme("catppuccin")
+		vim.cmd([[colorscheme catppuccin]])
+		vim.o.background = "dark"
 	end,
 }
