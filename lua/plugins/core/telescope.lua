@@ -179,14 +179,10 @@ keys = {
       { "ss", "<cmd>Telescope file_browser theme=ivy<cr>", desc = "file browser" },
       { "sC", "<cmd>Telescope commands<cr>", desc = "Commands" },
       { "sH", "<cmd>Telescope highlights<cr>", desc = "Highlight Groups" },
-      -- Git
-      { "<leader>go", "<cmd>Telescope git_status<cr>", desc = "Open changed file" },
-      { "<leader>gb", "<cmd>Telescope git_branches<cr>", desc = "Checkout branch" },
-      { "<leader>gc", "<cmd>Telescope git_commits<cr>", desc = "Checkout commit" },
       -- Find
-      { "<leader>f", "<cmd>Telescope find_files<cr>", desc = "Find files" },
-      { "<leader>F", "<cmd>Telescope live_grep<cr>", desc = "Find Text" },
-      { "<leader>b", "<cmd>Telescope buffers<cr>", desc = "Find buffer" },
+      { "ff", "<cmd>Telescope find_files<cr>", desc = "Find files" },
+      { "F", "<cmd>Telescope live_grep<cr>", desc = "Find Text" },
+      { "fb", "<cmd>Telescope buffers<cr>", desc = "Find buffer" },
     }
 
 }
