@@ -21,9 +21,9 @@ vim.g.maplocalleader = " "
 -- Normal --
 
 -- for saving and quiting
-keymap("n", "<leader>q", "<cmd>q!<cr>", opts)
+keymap("n", "<leader>q", "<cmd>qa<cr>", opts)
 keymap("n", "<leader>w", "<cmd>w<cr>", opts)
-keymap("n", "<leader>c", "<cmd>bd<cr>", opts)
+keymap("n", "<leader>c", "<cmd>bd!<cr>", opts)
 
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
