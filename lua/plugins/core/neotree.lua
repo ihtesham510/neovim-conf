@@ -140,7 +140,7 @@ return {
 					["<cr>"] = "open",
 					["l"] = "open",
 					["<esc>"] = "cancel", -- close preview or floating neo-tree window
-					["q"] = "cancel", -- close preview or floating neo-tree window
+					-- ["q"] = "cancel", -- close preview or floating neo-tree window
 					["P"] = { "toggle_preview", config = { use_float = true } },
 					["L"] = "focus_preview",
 					["S"] = "open_split",
