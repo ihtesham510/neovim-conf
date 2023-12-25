@@ -1,22 +1,9 @@
 return {
 	{
-		"catppuccin/nvim",
+		"Mofiqul/vscode.nvim",
 		lazy = false,
 		config = function()
-			require("catppuccin").setup({
-				integrations = {
-					cmp = true,
-					gitsigns = true,
-					nvimtree = true,
-					treesitter = true,
-					notify = false,
-					mini = {
-						enabled = true,
-						indentscope_color = "",
-					},
-				},
-			})
-			vim.cmd([[colorscheme catppuccin]])
+			vim.cmd([[colorscheme vscode]])
 			vim.o.background = "dark"
 		end,
 	},
