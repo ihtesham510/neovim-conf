@@ -6,25 +6,30 @@ return {
 		highlight = { timer = 250 },
 		ring = { storage = jit.os:find("Windows") and "shada" or "sqlite" },
 	},
-	config = function()
-		local keymap = vim.keymap.set
-		local opts = { noremap = true, silent = true }
-		keymap("i", "<C-p>", function()
-			require("telescope").extensions.yank_history.yank_history({})
-		end, opts)
-		keymap("v", "<leader>p", function()
-			require("telescope").extensions.yank_history.yank_history({})
-		end, opts)
-	end,
 	keys = {
     -- stylua: ignore
-    { "<leader>p", function() require("telescope").extensions.yank_history.yank_history({}) end,  desc = "Open Yank History" },
+    { "<leader>p", function() require("telescope").extensions.yank_history.yank_history({}) end, mode = { "n", "v","x" }, desc = "Open Yank History" },
+		{
+			"<C-p>",
+			function()
+				require("telescope").extensions.yank_history.yank_history({})
+			end,
+			mode = { "i" },
+			desc = "Open Yank History",
+		},
 		{
 			"y",
 			"<Plug>(YankyYank)",
 			mode = { "n", "x" },
 			desc = "Yank text",
 		},
+		{
+			"y",
+			"<Plug>(YankyYank)",
+			mode = { "i", "x" },
+			desc = "Yank text",
+		},
+
 		{
 			"p",
 			"<Plug>(YankyPutAfter)",
