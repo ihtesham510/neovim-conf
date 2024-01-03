@@ -7,8 +7,14 @@ return {
 		ring = { storage = jit.os:find("Windows") and "shada" or "sqlite" },
 	},
 	keys = {
-    -- stylua: ignore
-    { "<leader>p", function() require("telescope").extensions.yank_history.yank_history({}) end, mode = { "n", "v","x" }, desc = "Open Yank History" },
+		{
+			"<leader>p",
+			function()
+				require("telescope").extensions.yank_history.yank_history({})
+			end,
+			mode = { "n", "v", "x" },
+			desc = "Open Yank History",
+		},
 		{
 			"<C-p>",
 			function()
@@ -23,13 +29,6 @@ return {
 			mode = { "n", "x" },
 			desc = "Yank text",
 		},
-		{
-			"y",
-			"<Plug>(YankyYank)",
-			mode = { "i", "x" },
-			desc = "Yank text",
-		},
-
 		{
 			"p",
 			"<Plug>(YankyPutAfter)",
