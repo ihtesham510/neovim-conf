@@ -28,7 +28,7 @@ local on_attach = function(client, bufnr)
 		})
 	end, opts) -- Organise the imports
 	opts.desc = "add Missing Imports"
-	keymap("n", "<leader>la", function()
+	keymap("n", "<leader>lm", function()
 		vim.lsp.buf.code_action({
 			apply = true,
 			context = {

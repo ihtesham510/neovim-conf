@@ -5,6 +5,7 @@ return {
 	config = function()
 		local alpha = require("alpha")
 		local dashboard = require("alpha.themes.dashboard")
+		local keymap = vim.keymap.set
 
 		-- Set header
 		--
@@ -29,6 +30,7 @@ return {
 			dashboard.button("c", "  Configuration", ":e $MYVIMRC <CR>"),
 			dashboard.button("q", "󰗼  Quit Neovim", ":qa<CR>"),
 		}
+		keymap("n", "<leader>a", "<cmd>Alpha<cr>", { desc = "Open Alpha" })
 
 		-- Send config to alpha
 		alpha.setup(dashboard.opts)
