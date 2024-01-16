@@ -185,7 +185,7 @@ return {
 				["handlebars"] = { "prettier" },
 			},
 			formatters = {
-				injected = { options = { ignore_errors = true } },
+				injected = { options = { ignore_errors = false } },
 			},
 			main = "conform",
 		},
