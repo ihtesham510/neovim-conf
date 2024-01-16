@@ -44,6 +44,7 @@ return {
 			})
 			local keymap = vim.keymap.set
 			local opts = { noremap = true, silent = true }
+			opts.desc = "Open Mason"
 			keymap("n", "<leader>m", "<cmd>Mason<CR>", opts) -- show definition, references
 		end,
 	},

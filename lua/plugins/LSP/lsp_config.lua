@@ -25,17 +25,6 @@ local on_attach = function(client, bufnr)
 	opts.desc = "Go to declaration"
 	keymap("n", "gD", vim.lsp.buf.declaration, opts) -- go to declaration
 
-	opts.desc = "organise Imports"
-	keymap("n", "<leader>lo", function()
-		vim.lsp.buf.code_action({
-			apply = true,
-			context = {
-				only = { "source.organizeImports.ts" },
-				diagnostics = {},
-			},
-		})
-	end, opts) -- Organise the imports
-
 	opts.desc = "Show LSP definitions"
 	keymap("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts) -- show lsp definitions
 
@@ -49,7 +38,7 @@ local on_attach = function(client, bufnr)
 	keymap({ "n", "v" }, "<leader>la", vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
 
 	opts.desc = "Smart rename"
-	keymap("n", "<leader>rn", vim.lsp.buf.rename, opts) -- smart rename
+	keymap("n", "<leader>lR", vim.lsp.buf.rename, opts) -- smart rename
 
 	opts.desc = "Show buffer diagnostics"
 	keymap("n", "<leader>d", "<cmd>Telescope diagnostics bufnr=0<CR>", opts) -- show  diagnostics for file
