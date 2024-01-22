@@ -38,7 +38,7 @@ local on_attach = function(client, bufnr)
 	keymap({ "n", "v" }, "<leader>la", vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
 
 	opts.desc = "Smart rename"
-	keymap("n", "<leader>lR", vim.lsp.buf.rename, opts) -- smart rename
+	keymap("n", "<leader>rn", vim.lsp.buf.rename, opts) -- smart rename
 
 	opts.desc = "Show buffer diagnostics"
 	keymap("n", "<leader>d", "<cmd>Telescope diagnostics bufnr=0<CR>", opts) -- show  diagnostics for file

@@ -199,6 +199,14 @@ return {
 				end,
 				desc = "Format and save",
 			},
+			{
+				"<leader>lf",
+				function()
+					local cf = require("conform")
+					cf.format({ async = false, lsp_fallback = true })
+				end,
+				desc = "Format code",
+			},
 		},
 		init = function()
 			-- If you want the formatexpr, here is the place to set it
