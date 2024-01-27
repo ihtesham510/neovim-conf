@@ -85,4 +85,12 @@ end
 lspconfig["tsserver"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
+	init_options = {
+		-- This is the default which would be overwritten otherwise
+		hostInfo = "neovim",
+		-- 16 gb
+		maxTsServerMemory = 16384,
+		-- Never use LSP for syntax anyway
+		tsserver = { useSyntaxServer = "never" },
+	},
 })
