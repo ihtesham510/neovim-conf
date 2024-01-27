@@ -20,7 +20,7 @@ local on_attach = function(client, bufnr)
 	opts.buffer = bufnr
 	-- set keybinds
 	opts.desc = "Show LSP references"
-	keymap("n", "gR", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
+	keymap("n", "<leader>lR", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
 
 	opts.desc = "Go to declaration"
 	keymap("n", "gD", vim.lsp.buf.declaration, opts) -- go to declaration
