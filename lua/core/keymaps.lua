@@ -24,6 +24,9 @@ vim.g.maplocalleader = " "
 keymap("n", "<leader>q", "<cmd>qa<cr>", opts)
 keymap("n", "<leader>c", "<cmd>bd!<cr>", opts)
 
+-- copy and delete files
+keymap("n", "<C-c>", "<cmd>%y+<cr>", opts)
+keymap("n", "<C-d>", "<cmd>%d+<cr>", opts)
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
