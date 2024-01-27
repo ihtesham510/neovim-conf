@@ -3,7 +3,11 @@ return {
 	"gbprod/yanky.nvim",
 	dependencies = { { "kkharji/sqlite.lua", enabled = not jit.os:find("Windows") } },
 	opts = {
-		highlight = { timer = 250 },
+		highlight = {
+			on_put = false,
+			on_yank = false,
+			timer = 500,
+		},
 		ring = { storage = jit.os:find("Windows") and "shada" or "sqlite" },
 	},
 	keys = {
