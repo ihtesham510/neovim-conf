@@ -194,7 +194,7 @@ return {
 				"<leader>w",
 				function()
 					local cf = require("conform")
-					cf.format({ async = false, lsp_fallback = true })
+					cf.format({ async = false, lsp_fallback = true, timeout_ms = 500 })
 					vim.cmd([[w!]])
 				end,
 				desc = "Format and save",
@@ -203,7 +203,7 @@ return {
 				"<leader>lf",
 				function()
 					local cf = require("conform")
-					cf.format({ async = false, lsp_fallback = true })
+					cf.format({ async = true, lsp_fallback = true })
 				end,
 				desc = "Format code",
 			},
