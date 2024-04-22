@@ -213,6 +213,15 @@ return {
 			vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
 		end,
 	},
+
+	{
+		"kylechui/nvim-surround",
+		version = "*", -- Use for stability; omit to use `main` branch for the latest features
+		event = "VeryLazy",
+		config = function()
+			require("nvim-surround").setup({})
+		end,
+	},
 	{
 		"windwp/nvim-ts-autotag",
 		ft = {
@@ -305,7 +314,7 @@ return {
 					AARRGGBB = false, -- 0xAARRGGBB hex codes
 					rgb_fn = false, -- CSS rgb() and rgba() functions
 					hsl_fn = false, -- CSS hsl() and hsla() functions
-					css = false, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+					css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
 					css_fn = false, -- Enable all CSS *functions*: rgb_fn, hsl_fn
 					-- Available modes for `mode`: foreground, background,  virtualtext
 					mode = "background", -- Set the display mode.
@@ -317,7 +326,7 @@ return {
 					virtualtext = "■",
 					-- update color values even if buffer is not focused
 					-- example use: cmp_menu, cmp_docs
-					always_update = false,
+					always_update = true,
 				},
 				-- all the sub-options of filetypes apply to buftypes
 				buftypes = {},
