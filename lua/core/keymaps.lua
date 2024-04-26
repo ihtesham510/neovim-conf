@@ -33,6 +33,13 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
+-- splitting window
+keymap("n", "sl", "<cmd>vsplit<cr>", opts)
+keymap("n", "ss", "<cmd>split<cr>", opts)
+keymap("n", "q", "<cmd>close<cr>", opts)
+keymap("n", "Q", "q", opts)
+keymap("n", "P", "Q", opts)
+
 -- indent
 keymap("v", "<Tab>", ">gv", opts)
 keymap("v", "<S-Tab>", "<gv", opts)
