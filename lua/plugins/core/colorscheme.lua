@@ -2,6 +2,11 @@ return {
 	{
 		"Mofiqul/vscode.nvim",
 		lazy = false,
+		priority = 1000,
+		config = function()
+			vim.cmd("colorscheme vscode")
+			vim.o.background = "dark"
+		end,
 	},
 	{
 		"folke/tokyonight.nvim",
@@ -39,11 +44,11 @@ return {
 	},
 	{
 		"catppuccin/nvim",
-		lazy = false,
-		name = "catppuccin",
-		priority = 1000,
-		config = function()
-			vim.cmd("colorscheme catppuccin-mocha")
-		end,
+		-- lazy = false,
+		-- name = "catppuccin",
+		-- priority = 1000,
+		-- config = function()
+		-- 	vim.cmd("colorscheme catppuccin-mocha")
+		-- end,
 	},
 }

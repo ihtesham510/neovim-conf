@@ -1,11 +1,10 @@
 return {
 	"nvim-neo-tree/neo-tree.nvim",
-	branch = "v3.x",
-	lazy = false,
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
 		"MunifTanjim/nui.nvim",
+		-- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
 		{
 			"s1n7ax/nvim-window-picker",
 			version = "2.*",
@@ -38,7 +37,6 @@ return {
 			popup_border_style = "rounded",
 			enable_git_status = true,
 			enable_diagnostics = true,
-			enable_normal_mode_for_inputs = false, -- Enable normal mode for input dialogs.
 			open_files_do_not_replace_types = { "terminal", "trouble", "qf" }, -- when opening files, do not use windows containing these filetypes or buftypes
 			sort_case_insensitive = false, -- used when sorting files and directories in the tree
 			sort_function = nil, -- use a custom function for sorting files and directories in the tree
@@ -88,9 +86,9 @@ return {
 				git_status = {
 					symbols = {
 						-- Change type
-						added = "", -- or "✚", but this is redundant info if you use git_status_colors on the name
-						modified = "", -- or "", but this is redundant info if you use git_status_colors on the name
-						deleted = "", -- this can only be used in the git_status source
+						added = "", -- or "✚", but this is redundant info if you use git_status_colors on the name
+						modified = "", -- or "", but this is redundant info if you use git_status_colors on the name
+						deleted = "✖", -- this can only be used in the git_status source
 						renamed = "󰁕", -- this can only be used in the git_status source
 						-- Status type
 						untracked = "",
@@ -110,11 +108,11 @@ return {
 					required_width = 122, -- min width of window required to show this column
 				},
 				last_modified = {
-					enabled = false,
+					enabled = true,
 					required_width = 88, -- min width of window required to show this column
 				},
 				created = {
-					enabled = false,
+					enabled = true,
 					required_width = 110, -- min width of window required to show this column
 				},
 				symlink_target = {
@@ -126,8 +124,8 @@ return {
 			-- see `:h neo-tree-custom-commands-global`
 			commands = {},
 			window = {
-				position = "float",
-				width = 52,
+				position = "left",
+				width = 46,
 				mapping_options = {
 					noremap = true,
 					nowait = true,
@@ -141,16 +139,16 @@ return {
 					["<cr>"] = "open",
 					["l"] = "open",
 					["<esc>"] = "cancel", -- close preview or floating neo-tree window
-					-- ["q"] = "cancel", -- close preview or floating neo-tree window
-					["P"] = { "toggle_preview", config = { use_float = true } },
-					["L"] = "focus_preview",
+					["P"] = { "toggle_preview", config = { use_float = true, use_image_nvim = true } },
+					-- Read `# Preview Mode` for more information
+					["F"] = "focus_preview",
 					["S"] = "open_split",
 					["s"] = "open_vsplit",
-					-- ["S"] = "split_with_window_picker",
-					-- ["s"] = "vsplit_with_window_picker",
-					--["t"] = "open_tabnew",
+					["s"] = "split_with_window_picker",
+					-- ["S"] = "vsplit_with_window_picker",
+					["t"] = "open_tabnew",
 					-- ["<cr>"] = "open_drop",
-					["o"] = "open_tab_drop",
+					-- ["t"] = "open_tab_drop",
 					["w"] = "open_with_window_picker",
 					--["P"] = "toggle_preview", -- enter preview mode, which shows the current node without focusing
 					["C"] = "close_node",
@@ -192,18 +190,21 @@ return {
 			filesystem = {
 				filtered_items = {
 					visible = false, -- when true, they will just be displayed differently than normal items
-					hide_dotfiles = false,
+					hide_dotfiles = true,
 					hide_gitignored = true,
 					hide_hidden = true, -- only works on Windows for hidden files/directories
 					hide_by_name = {
-						"node_modules",
+						--"node_modules"
 					},
 					hide_by_pattern = { -- uses glob style patterns
 						--"*.meta",
 						--"*/src/*/tsconfig.json",
 					},
 					always_show = { -- remains visible even if other settings would normally hide it
-						".gitignored",
+						--".gitignored",
+					},
+					always_show_by_pattern = { -- uses glob style patterns
+						--".env*",
 					},
 					never_show = { -- remains hidden even if visible is toggled to true, this overrides always_show
 						--".DS_Store",
@@ -235,7 +236,7 @@ return {
 						["D"] = "fuzzy_finder_directory",
 						["#"] = "fuzzy_sorter", -- fuzzy sorting using the fzy algorithm
 						-- ["D"] = "fuzzy_sorter_directory",
-						["f"] = "filter_on_submit",
+						-- ["f"] = "filter_on_submit",
 						["<c-x>"] = "clear_filter",
 						["[g"] = "prev_git_modified",
 						["]g"] = "next_git_modified",
@@ -247,12 +248,14 @@ return {
 						["on"] = { "order_by_name", nowait = false },
 						["os"] = { "order_by_size", nowait = false },
 						["ot"] = { "order_by_type", nowait = false },
+						-- ['<key>'] = function(state) ... end,
 					},
 					fuzzy_finder_mappings = { -- define keymaps for filter popup window in fuzzy_finder_mode
 						["<down>"] = "move_cursor_down",
 						["<C-n>"] = "move_cursor_down",
 						["<up>"] = "move_cursor_up",
 						["<C-p>"] = "move_cursor_up",
+						-- ['<key>'] = function(state, scroll_padding) ... end,
 					},
 				},
 
@@ -307,7 +310,11 @@ return {
 		vim.cmd([[nnoremap \ :Neotree reveal<cr>]])
 	end,
 	keys = {
-		{ "t", "<cmd>Neotree toggle<cr>", desc = "Neotree toggle" },
-		{ "<leader>e", "<cmd>Neotree toggle position=left<cr>", desc = "Neotree toggle" },
+		{
+			"t",
+			"<cmd>Neotree toggle<cr>",
+			mode = { "n" },
+			desc = "Open Neotree",
+		},
 	},
 }

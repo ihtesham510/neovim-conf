@@ -33,12 +33,27 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
+keymap("n", "K", "<ScrollWheelUp>", opts)
+keymap("n", "J", "<ScrollWheelDown>", opts)
+
+-- remove highlight
+keymap("n", "<F2>", "<cmd>noh<cr>", opts)
+
 -- splitting window
 keymap("n", "sl", "<cmd>vsplit<cr>", opts)
 keymap("n", "ss", "<cmd>split<cr>", opts)
 keymap("n", "q", "<cmd>close<cr>", opts)
 keymap("n", "Q", "q", opts)
 keymap("n", "P", "Q", opts)
+
+-- for better nevigation
+keymap("n", ";d", "$", opts)
+keymap("n", ";a", "0", opts)
+keymap("v", ";d", "$", opts)
+keymap("v", ";a", "0", opts)
+
+keymap("n", ";k", "5k", opts)
+keymap("n", ";j", "5j", opts)
 
 -- indent
 keymap("v", "<Tab>", ">gv", opts)
@@ -66,7 +81,9 @@ keymap("i", "kj", "<ESC>", opts)
 -- Visual --
 -- Stay in indent mode
 keymap("v", "<", "<gv^", opts)
+keymap("n", "<", "<gv^", opts)
 keymap("v", ">", ">gv^", opts)
+keymap("n", ">", ">gv^", opts)
 keymap("v", "q", "<ESC>", opts)
 
 -- Move text up and down
