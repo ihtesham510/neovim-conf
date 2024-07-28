@@ -26,6 +26,33 @@ return {
         -- See `:help vim.lsp.*` for documentation on any of the below functions
         local opts = { buffer = ev.buf, silent = true }
 
+        local auto_import = function()
+          vim.lsp.buf.code_action({
+            apply = true,
+            context = {
+              only = { "source.addMissingImports.ts" },
+              diagnostics = {},
+            },
+          })
+        end
+        local remove_unused_imports = function()
+          vim.lsp.buf.code_action({
+            apply = true,
+            context = {
+              only = { "source.removeUnused.ts" },
+              diagnostics = {},
+            },
+          })
+        end
+        local organize_imports = function()
+          vim.lsp.buf.code_action({
+            apply = true,
+            context = {
+              only = { "source.organizeImports.ts" },
+              diagnostics = {},
+            },
+          })
+        end
         -- set keybinds
         opts.desc = "Show LSP references"
         keymap.set("n", "gR", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
@@ -65,6 +92,15 @@ return {
 
         opts.desc = "Restart LSP"
         keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
+
+        opts.desc = "Auto Import"
+        keymap.set("n", "<leader>lm", auto_import, opts) -- mapping to restart lsp if necessary
+
+        opts.desc = "Remove Unused"
+        keymap.set("n", "<leader>lR", remove_unused_imports, opts) -- mapping to restart lsp if necessary
+
+        opts.desc = "Remove Unused"
+        keymap.set("n", "<leader>lo", organize_imports, opts) -- mapping to restart lsp if necessary
       end,
     })
 
@@ -159,4 +195,3 @@ return {
     })
   end,
 }
-
