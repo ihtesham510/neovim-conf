@@ -61,12 +61,12 @@ return {
     keymap("n", "sc", "<cmd>Telescope commands<cr>", { desc = "Search Commands" })
     keymap("n", "sk", "<cmd>Telescope keymaps<cr>", { desc = "Search Keymaps" })
     -- git
-    keymap("n", "sc", "<cmd>Telescope git_commits<cr>", { desc = "Search Commits" })
+    keymap("n", "sC", "<cmd>Telescope git_commits<cr>", { desc = "Search Commits" })
     keymap("n", "gs", "<cmd>Telescope git_status<cr>", { desc = "Git Status" })
     -- project
     keymap("n", "sp", "<cmd>Telescope projects theme=dropdown<cr>", { desc = "Find Projects" })
     -- colorscheme
-    keymap("n", "sp", "<cmd>Telescope colorscheme theme=dropdown<cr>", { desc = "Search Colorschemes" })
+    keymap("n", "sc", "<cmd>Telescope colorscheme theme=dropdown<cr>", { desc = "Search Colorschemes" })
     -- string
     keymap("n", "F", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
     keymap("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
