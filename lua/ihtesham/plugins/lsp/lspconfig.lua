@@ -5,6 +5,7 @@ return {
     "hrsh7th/cmp-nvim-lsp",
     { "antosha417/nvim-lsp-file-operations", config = true },
     { "folke/neodev.nvim", opts = {} },
+    "b0o/schemastore.nvim",
   },
   config = function()
     -- import lspconfig plugin
@@ -114,6 +115,30 @@ return {
           filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
         })
       end,
+
+      ["jsonls"] = function()
+        -- configure emmet language server
+        lspconfig["jsonls"].setup({
+          capabilities = capabilities,
+          settings = {
+            json = {
+              schemas = require("schemastore").json.schemas(),
+              validate = { enable = true },
+            },
+          },
+          diagnostics = true,
+          setup = {
+            commands = {
+              Format = {
+                function()
+                  vim.lsp.buf.range_formatting({}, { 0, 0 }, { vim.fn.line("$"), 0 })
+                end,
+              },
+            },
+          },
+        })
+      end,
+
       ["lua_ls"] = function()
         -- configure lua server (with special settings)
         lspconfig["lua_ls"].setup({
