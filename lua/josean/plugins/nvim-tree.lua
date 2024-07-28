@@ -66,7 +66,10 @@ return {
         },
       },
       filters = {
-        custom = { ".DS_Store" },
+        dotfiles = false,
+        git_clean = false,
+        no_buffer = false,
+        custom = { ".DS_Store", "node_modules" },
       },
       git = {
         ignore = false,
