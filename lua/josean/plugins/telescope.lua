@@ -48,19 +48,30 @@ return {
     })
     telescope.load_extension("fzf")
     telescope.load_extension("projects")
-    -- set keymaps
-    local keymap = vim.keymap -- for conciseness
+    -- keymaps
+    local keymap = vim.keymap.set -- for conciseness
 
     -- files
-    keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
-    keymap.set("n", "ff", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
-    keymap.set("n", "<leader>sr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
-    keymap.set("n", "sr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
+    keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
+    keymap("n", "ff", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
+    keymap("n", "<leader>sr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
+    keymap("n", "sr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
+    -- nvim build in
+    keymap("n", "sh", "<cmd>Telescope help_tags<cr>", { desc = "Search Help" })
+    keymap("n", "sc", "<cmd>Telescope commands<cr>", { desc = "Search Commands" })
+    keymap("n", "sk", "<cmd>Telescope keymaps<cr>", { desc = "Search Keymaps" })
+    -- git
+    keymap("n", "sc", "<cmd>Telescope git_commits<cr>", { desc = "Search Commits" })
+    keymap("n", "gs", "<cmd>Telescope git_status<cr>", { desc = "Git Status" })
+    -- project
+    keymap("n", "sp", "<cmd>Telescope projects theme=dropdown<cr>", { desc = "Find Projects" })
+    -- colorscheme
+    keymap("n", "sp", "<cmd>Telescope colorscheme theme=dropdown<cr>", { desc = "Search Colorschemes" })
     -- string
-    keymap.set("n", "F", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
-    keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
-    keymap.set("n", "fs", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
+    keymap("n", "F", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
+    keymap("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
+    keymap("n", "fs", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
     -- todo
-    keymap.set("n", "ft", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
+    keymap("n", "ft", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
   end,
 }
