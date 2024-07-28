@@ -15,7 +15,7 @@ return {
       vim.keymap.set("n", "<CR>", api.node.open.edit, opts("Open"))
       -- ---
       -- -- OR use all default mappings
-      -- api.config.mappings.default_on_attach(bufnr)
+      api.config.mappings.default_on_attach(bufnr)
       --
       -- -- remove a default
       -- vim.keymap.del("n", "<C-]>", { buffer = bufnr })
