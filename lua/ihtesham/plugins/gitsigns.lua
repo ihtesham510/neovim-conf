@@ -10,8 +10,8 @@ return {
       end
 
       -- Navigation
-      map("n", "]h", gs.next_hunk, "Next Hunk")
-      map("n", "[h", gs.prev_hunk, "Prev Hunk")
+      map("n", "gj", gs.next_hunk, "Next Hunk")
+      map("n", "gk", gs.prev_hunk, "Prev Hunk")
 
       -- Actions
       map("n", "<leader>hs", gs.stage_hunk, "Stage hunk")
@@ -42,6 +42,7 @@ return {
 
       -- Text object
       map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", "Gitsigns select hunk")
+      map({ "o", "x" }, "ah", ":<C-U>Gitsigns select_hunk<CR>", "Gitsigns select hunk")
     end,
   },
 }
