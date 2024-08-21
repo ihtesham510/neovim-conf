@@ -27,7 +27,10 @@ return {
     mason_lspconfig.setup({
       -- list of servers for mason to install
       ensure_installed = {
-        "tsserver",
+        -- "tsserver",
+        "docker_compose_language_service",
+        "dockerls",
+        "vtsls",
         "html",
         "cssls",
         "tailwindcss",
