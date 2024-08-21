@@ -6,6 +6,10 @@ local opts = { noremap = true, silent = true }
 keymap("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
 keymap("i", "kj", "<ESC>", { desc = "Exit insert mode with kj" })
 
+-- copy and delete files
+keymap("n", "<C-c>", "<cmd>%y+<cr>", opts)
+keymap("n", "<C-d>", "<cmd>%d+<cr>", opts)
+
 keymap("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 keymap("v", "q", "<ESC>", { desc = "Exit Visual Mode" })
 -- save and exit
