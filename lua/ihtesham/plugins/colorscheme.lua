@@ -7,7 +7,7 @@ return {
     local bg_dark = "#1b1b26"
     local bg_highlight = "#203666" -- "#143652" -- #698dda
     local bg_search = "#383eba"
-    local bg_visual = "#1f2940" --"#275378"
+    local bg_visual = "#275378" -- "#1f2940"
     local fg = "#CBE0F0"
     local fg_dark = "#B4D0E9"
     local fg_gutter = "#627E97"
