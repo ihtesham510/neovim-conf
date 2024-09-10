@@ -27,6 +27,7 @@ return {
       dashboard.button("r", "  Recently used files", ":Telescope oldfiles <CR>"),
       dashboard.button("F", "  Find text", ":Telescope live_grep <CR>"),
       dashboard.button("l", "󰒲  Open Lazy", ":Lazy <CR>"),
+      dashboard.button("m", "M  Open Mason", ":Mason <CR>"),
       dashboard.button("c", "  Configuration", ":e $MYVIMRC <CR>"),
       dashboard.button("q", "󰗼  Quit Neovim", ":qa<CR>"),
     }
