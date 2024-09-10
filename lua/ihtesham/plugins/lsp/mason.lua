@@ -8,6 +8,11 @@ return {
     -- import mason
     local mason = require("mason")
 
+    -- keymap
+    local keymap = vim.keymap.set -- for conciseness
+    local opts = { noremap = true, silent = true }
+    opts.desc = "Open Mason"
+    keymap("n", "<leader>m", "<cmd>Mason<cr>", opts)
     -- import mason-lspconfig
     local mason_lspconfig = require("mason-lspconfig")
 
@@ -40,6 +45,10 @@ return {
         "graphql",
         "emmet_ls",
         "prismals",
+        "clangd",
+        "taplo",
+        "sqlls",
+        "rust_analyzer",
         -- "pyright",
       },
     })
@@ -48,6 +57,8 @@ return {
       ensure_installed = {
         "prettier", -- prettier formatter
         "stylua", -- lua formatter
+        "sql-formatter",
+        "clang-format",
         -- "isort", -- python formatter
         -- "black", -- python formatter
         -- "pylint",
