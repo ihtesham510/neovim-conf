@@ -19,8 +19,8 @@ keymap("n", "<leader>q", ":qa<CR>", { desc = "Quit" })
 keymap("x", "J", ":m '>+1<CR>gv=gv", opts)
 keymap("x", "K", ":m '<-2<CR>gv=gv", opts)
 -- increment/decrement numbers
-keymap("n", "<leader>+", "<C-a>", { desc = "Increment number" }) -- increment
-keymap("n", "<leader>-", "<C-x>", { desc = "Decrement number" }) -- decrement
+keymap("n", "+", "<C-a>", { desc = "Increment number" }) -- increment
+keymap("n", "-", "<C-x>", { desc = "Decrement number" }) -- decrement
 
 -- window management
 keymap("n", "<leader>sl", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically
@@ -30,4 +30,4 @@ keymap("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" }) --
 -- tabs
 keymap("n", "L", "<cmd>bnext<CR>", { desc = "Next tab" }) -- open new tab
 keymap("n", "H", "<cmd>bprevious<CR>", { desc = "Previous tab" }) -- close current tab
-keymap("n", "<leader>c", "<cmd>bd!<CR>", { desc = "Close tab" }) --  move current buffer to new tab
+keymap("n", "<leader>x", "<cmd>bd!<CR>", { desc = "Close tab" }) --  move current buffer to new tab
