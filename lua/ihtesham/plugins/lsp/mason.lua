@@ -49,6 +49,7 @@ return {
         "taplo",
         "sqlls",
         "rust_analyzer",
+        "gopls",
         -- "pyright",
       },
     })
@@ -59,6 +60,7 @@ return {
         "stylua", -- lua formatter
         "sql-formatter",
         "clang-format",
+        "crlfmt",
         -- "isort", -- python formatter
         -- "black", -- python formatter
         -- "pylint",
