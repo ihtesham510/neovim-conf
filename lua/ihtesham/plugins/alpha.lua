@@ -21,10 +21,10 @@ return {
     }
     -- Set menu
     dashboard.section.buttons.val = {
-      dashboard.button("f", "󰱼  Find file", ":Telescope find_files <CR>"),
-      dashboard.button("n", "  New file", ":ene <BAR> startinsert <CR>"),
       dashboard.button("p", "  Find project", ":Telescope projects <CR>"),
-      dashboard.button("r", "  Recently used files", ":Telescope oldfiles <CR>"),
+      dashboard.button("ff", "󰱼  Find file", ":Telescope find_files <CR>"),
+      dashboard.button("sr", "  Recently used files", ":Telescope oldfiles <CR>"),
+      dashboard.button("n", "  New file", ":ene <BAR> startinsert <CR>"),
       dashboard.button("F", "  Find text", ":Telescope live_grep <CR>"),
       dashboard.button("l", "󰒲  Open Lazy", ":Lazy <CR>"),
       dashboard.button("m", "M  Open Mason", ":Mason <CR>"),
