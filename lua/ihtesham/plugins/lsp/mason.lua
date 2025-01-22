@@ -45,9 +45,9 @@ return {
         "graphql",
         "emmet_ls",
         "prismals",
-        "clangd",
+        -- "clangd",
         "taplo",
-        "sqlls",
+        -- "sqlls",
         "rust_analyzer",
         "gopls",
         -- "pyright",
@@ -59,7 +59,7 @@ return {
         "prettier", -- prettier formatter
         "stylua", -- lua formatter
         "sql-formatter",
-        "clang-format",
+        -- "clang-format",
         "crlfmt",
         -- "isort", -- python formatter
         -- "black", -- python formatter
