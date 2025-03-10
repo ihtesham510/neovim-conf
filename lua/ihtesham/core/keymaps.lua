@@ -31,4 +31,4 @@ keymap("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" }) --
 -- tabs
 keymap("n", "L", "<cmd>bnext<CR>", { desc = "Next tab" }) -- open new tab
 keymap("n", "H", "<cmd>bprevious<CR>", { desc = "Previous tab" }) -- close current tab
-keymap("n", "<leader>c", "<cmd>bd!<CR>", { desc = "Close tab" }) --  move current buffer to new tab
+keymap("n", ",", "<cmd>bd!<CR>", { desc = "Close tab" }) --  move current buffer to new tab
