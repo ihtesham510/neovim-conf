@@ -112,7 +112,7 @@ return {
         opts.desc = "Remove Unused"
         keymap.set("n", "<leader>lR", remove_unused_imports, opts) -- mapping to restart lsp if necessary
 
-        opts.desc = "Remove Unused"
+        opts.desc = "Organize Imports"
         keymap.set("n", "<leader>lo", organize_imports, opts) -- mapping to restart lsp if necessary
       end,
     })
