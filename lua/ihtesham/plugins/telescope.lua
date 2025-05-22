@@ -71,7 +71,7 @@ return {
     -- string
     keymap("n", "F", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
     keymap("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
-    keymap("n", "fs", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
+    keymap({ "n", "x", "v" }, "fs", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
     -- buffers
     keymap("n", "fb", "<cmd>Telescope buffers<cr>", { desc = "Find Buffers" })
     keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Find Buffers" })
