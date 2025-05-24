@@ -70,7 +70,13 @@ return {
     keymap("n", "sc", "<cmd>Telescope colorscheme theme=dropdown<cr>", { desc = "Search Colorschemes" })
     -- string
     keymap("n", "F", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
-    keymap("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
+    keymap(
+      { "n", "v" },
+      "?",
+      "<cmd>Telescope current_buffer_fuzzy_find fuzzy=false case_mode=ignore_case initial_mode=insert<cr>",
+      { desc = "Find string in cwd" }
+    )
+    keymap("n", "<leader>fs", "<cmd>Telescope live_grep={ search_dir='%:p'}<cr>", { desc = "Find string in cwd" })
     keymap({ "n", "x", "v" }, "fs", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
     -- buffers
     keymap("n", "fb", "<cmd>Telescope buffers<cr>", { desc = "Find Buffers" })
