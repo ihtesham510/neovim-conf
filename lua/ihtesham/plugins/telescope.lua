@@ -58,9 +58,9 @@ return {
     keymap("n", "<leader>sr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
     keymap("n", "sr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
     -- nvim build in
-    keymap("n", "sh", "<cmd>Telescope help_tags<cr>", { desc = "Search Help" })
-    keymap("n", "sc", "<cmd>Telescope commands<cr>", { desc = "Search Commands" })
-    keymap("n", "sk", "<cmd>Telescope keymaps<cr>", { desc = "Search Keymaps" })
+    keymap("n", "sh", "<cmd>Telescope help_tags layout_strategy=vertical <cr>", { desc = "Search Help" })
+    keymap("n", "sc", "<cmd>Telescope commands layout_strategy=vertical<cr>", { desc = "Search Commands" })
+    keymap("n", "sk", "<cmd>Telescope keymaps layout_strategy=vertical<cr>", { desc = "Search Keymaps" })
     -- git
     keymap("n", "sC", "<cmd>Telescope git_commits<cr>", { desc = "Search Commits" })
     keymap("n", "gs", "<cmd>Telescope git_status<cr>", { desc = "Git Status" })
@@ -73,11 +73,17 @@ return {
     keymap(
       { "n", "v" },
       "?",
-      "<cmd>Telescope current_buffer_fuzzy_find fuzzy=false case_mode=ignore_case initial_mode=insert<cr>",
+      "<cmd>Telescope current_buffer_fuzzy_find fuzzy=false case_mode=ignore_case initial_mode=insert layout_strategy=vertical<cr>",
       { desc = "Find string in cwd" }
     )
     keymap("n", "<leader>fs", "<cmd>Telescope live_grep={ search_dir='%:p'}<cr>", { desc = "Find string in cwd" })
     keymap({ "n", "x", "v" }, "fs", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
+    keymap(
+      { "n", "x", "v" },
+      "<leader>fs",
+      "<cmd>Telescope grep_string<cr>",
+      { desc = "Find string under cursor in cwd" }
+    )
     -- buffers
     keymap("n", "fb", "<cmd>Telescope buffers<cr>", { desc = "Find Buffers" })
     keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Find Buffers" })

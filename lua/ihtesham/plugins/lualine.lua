@@ -1,5 +1,5 @@
 local colors = {
-  normal = "#698dda",
+  normal = "#848fbf",
   insert = "#3EFFDC",
   visual = "#3e279d",
   command = "#FFDA7B",
@@ -64,7 +64,7 @@ return {
         icons_enabled = true,
         theme = my_lualine_theme,
         component_separators = { left = "|", right = "|" },
-        section_separators = { left = "", right = "" },
+        section_separators = { left = "", right = "" },
         disabled_filetypes = {
           statusline = {},
           winbar = {},
