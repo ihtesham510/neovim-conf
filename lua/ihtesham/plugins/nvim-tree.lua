@@ -1,6 +1,6 @@
 return {
   "nvim-tree/nvim-tree.lua",
-  dependencies = "nvim-tree/nvim-web-devicons",
+  dependencies = { "nvim-tree/nvim-web-devicons", "nvim-telescope/telescope.nvim" },
   config = function()
     local nvimtree = require("nvim-tree")
     local function my_on_attach(bufnr)
@@ -16,6 +16,8 @@ return {
       -- ---
       -- -- OR use all default mappings
       api.config.mappings.default_on_attach(bufnr)
+
+      vim.keymap.set("n", "ff", "<cmd>Telescope find_files<cr>", opts("Open"))
       --
       -- -- remove a default
       -- vim.keymap.del("n", "<C-]>", { buffer = bufnr })
