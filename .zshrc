@@ -139,3 +139,15 @@ esac
 
 # fzf
 eval "$(fzf --zsh)"
+
+#__ fzf keybindings __#
+# search files
+bindkey -r '^T'
+bindkey -r '\ef'
+bindkey '\ef' fzf-file-widget
+
+# search history 
+bindkey -r '^R'
+bindkey -r '\er'
+bindkey '\er' fzf-history-widget 
+export FZF_DEFAULT_OPTS="--bind 'alt-,:up,alt-.:down'"
