@@ -23,6 +23,8 @@ keymap("n", "+", "<C-a>", { desc = "Increment number" }) -- increment
 keymap("n", "-", "<C-x>", { desc = "Decrement number" }) -- decrement
 
 -- window management
+keymap("n", "<A-(>", "<C-w>>", { desc = "Increase Window to left" }) -- split window vertically
+keymap("n", "<A-)>", "<C-w><", { desc = "Increase Window to right" }) -- split window vertically
 keymap("n", "<leader>sl", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically
 keymap("n", "<leader>sj", "<C-w>s", { desc = "Split window horizontally" }) -- split window horizontally
 keymap("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" }) -- make split windows equal width & height
