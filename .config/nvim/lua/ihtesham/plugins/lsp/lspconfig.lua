@@ -6,7 +6,72 @@ return {
     'WhoIsSethDaniel/mason-tool-installer.nvim',
     'b0o/schemastore.nvim',
   },
+
   config = function()
+    local servers = {
+      clangd = {},
+      dockerls = {},
+      docker_compose_language_service = {},
+      vtsls = {
+        filetypes = {
+          'javascript',
+          'javascriptreact',
+          'javascript.jsx',
+          'typescript',
+          'typescriptreact',
+          'typescript.tsx',
+        },
+        settings = {
+          complete_function_calls = true,
+          vtsls = {
+            enableMoveToFileCodeAction = true,
+            autoUseWorkspaceTsdk = true,
+            experimental = {
+              maxInlayHintLength = 30,
+              completion = {
+                enableServerSideFuzzyMatch = true,
+              },
+            },
+          },
+          typescript = {
+            updateImportsOnFileMove = { enabled = 'always' },
+            suggest = {
+              completeFunctionCalls = true,
+            },
+            inlayHints = {
+              enumMemberValues = { enabled = true },
+              functionLikeReturnTypes = { enabled = true },
+              parameterNames = { enabled = 'literals' },
+              parameterTypes = { enabled = true },
+              propertyDeclarationTypes = { enabled = true },
+              variableTypes = { enabled = false },
+            },
+          },
+        },
+      },
+      emmet_ls = {},
+      tailwindcss = {},
+      rust_analyzer = {},
+      jsonls = {
+        settings = {
+          json = {
+            schemas = require('schemastore').json.schemas(),
+            validate = { enable = true },
+          },
+          diagnostics = true,
+        },
+      },
+      lua_ls = {
+        settings = {
+          Lua = {
+            diagnostics = { globals = { 'vim' } },
+            completion = {
+              callSnippet = 'Replace',
+            },
+          },
+        },
+      },
+    }
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
       callback = function(event)
@@ -97,70 +162,6 @@ return {
 
     local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-    local servers = {
-      clangd = {},
-      dockerls = {},
-      docker_compose_language_service = {},
-      vtsls = {
-        filetypes = {
-          'javascript',
-          'javascriptreact',
-          'javascript.jsx',
-          'typescript',
-          'typescriptreact',
-          'typescript.tsx',
-        },
-        settings = {
-          complete_function_calls = true,
-          vtsls = {
-            enableMoveToFileCodeAction = true,
-            autoUseWorkspaceTsdk = true,
-            experimental = {
-              maxInlayHintLength = 30,
-              completion = {
-                enableServerSideFuzzyMatch = true,
-              },
-            },
-          },
-          typescript = {
-            updateImportsOnFileMove = { enabled = 'always' },
-            suggest = {
-              completeFunctionCalls = true,
-            },
-            inlayHints = {
-              enumMemberValues = { enabled = true },
-              functionLikeReturnTypes = { enabled = true },
-              parameterNames = { enabled = 'literals' },
-              parameterTypes = { enabled = true },
-              propertyDeclarationTypes = { enabled = true },
-              variableTypes = { enabled = false },
-            },
-          },
-        },
-      },
-      emmet_ls = {},
-      tailwindcss = {},
-      rust_analyzer = {},
-      jsonls = {
-        settings = {
-          json = {
-            schemas = require('schemastore').json.schemas(),
-            validate = { enable = true },
-          },
-          diagnostics = true,
-        },
-      },
-      lua_ls = {
-        settings = {
-          Lua = {
-            diagnostics = { globals = { 'vim' } },
-            completion = {
-              callSnippet = 'Replace',
-            },
-          },
-        },
-      },
-    }
     local ensure_installed = vim.tbl_keys(servers)
     vim.list_extend(ensure_installed, {
       'stylua',
