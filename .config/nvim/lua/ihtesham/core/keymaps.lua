@@ -18,7 +18,7 @@ keymap('n', '<C-k>', '<C-w>k', opts)
 keymap('n', '<C-j>', '<C-w>j', opts)
 keymap('n', '<C-h>', '<C-w>h', opts)
 
-keymap('n', '<leader>nh', ':nohl<CR>', { desc = 'Clear search highlights' })
+keymap('n', '<leader>nh', ':nohl<CR>', { desc = 'Clear search highlights', silent = true })
 keymap('v', 'q', '<ESC>', { desc = 'Exit Visual Mode' })
 -- save and exit
 keymap('n', '<leader>w', ':w<CR>', { desc = 'Save File', silent = true })
