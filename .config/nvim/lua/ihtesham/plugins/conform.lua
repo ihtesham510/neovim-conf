@@ -15,11 +15,15 @@ return {
         }
       end
     end,
+    notify_no_formatters = true,
     formatters_by_ft = {
       typescript = { 'prettierd', 'prettier' },
       typescriptreact = { 'prettierd', 'prettier' },
       javascript = { 'prettierd', 'prettier' },
       javascriptreact = { 'prettierd', 'prettier' },
+      sql = { 'sqlfmt' },
+      rust = { 'rustfmt' },
+      toml = { 'taplo' },
       svelte = { 'prettier' },
       css = { 'prettier' },
       html = { 'prettier' },
@@ -31,6 +35,13 @@ return {
       lua = { 'stylua' },
       python = { 'isort', 'black' },
       go = { 'crlfmt' },
+    },
+    formatters = {
+      tombi = {
+        command = 'tombi',
+        args = { '-' }, -- or adjust if tombi doesn’t read from stdin
+        stdin = true,
+      },
     },
   },
 }

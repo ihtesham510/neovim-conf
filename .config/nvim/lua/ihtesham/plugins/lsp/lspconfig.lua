@@ -72,6 +72,12 @@ return {
         },
       },
     }
+
+    local tools = {
+      'stylua',
+      'taplo',
+    }
+
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
       callback = function(event)
@@ -163,19 +169,21 @@ return {
     local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
     local ensure_installed = vim.tbl_keys(servers)
-    vim.list_extend(ensure_installed, {
-      'stylua',
-    })
-    require('mason-tool-installer').setup { ensure_installed = ensure_installed }
+
+    require('mason-tool-installer').setup { ensure_installed = tools }
 
     require('mason-lspconfig').setup {
-      ensure_installed = {}, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
+      ensure_installed = ensure_installed, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
       automatic_installation = true,
       handlers = {
         function(server_name)
           local server = servers[server_name]
-          server.capabilities = vim.tbl_deep_extend('force', {}, capabilities or {}, server.capabilities or {})
-          require('lspconfig')[server_name].setup(server)
+          if server then
+            if capabilities or server.capabilities then
+              server.capabilities = vim.tbl_deep_extend('force', {}, capabilities or {}, server.capabilities or {})
+            end
+            require('lspconfig')[server_name].setup(server)
+          end
         end,
       },
     }
