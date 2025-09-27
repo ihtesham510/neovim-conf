@@ -1,23 +1,23 @@
 return {
-  "nvim-tree/nvim-tree.lua",
-  dependencies = { "nvim-tree/nvim-web-devicons", "nvim-telescope/telescope.nvim" },
+  'nvim-tree/nvim-tree.lua',
+  dependencies = { 'nvim-tree/nvim-web-devicons', 'nvim-telescope/telescope.nvim' },
   config = function()
-    local nvimtree = require("nvim-tree")
+    local nvimtree = require 'nvim-tree'
     local function my_on_attach(bufnr)
-      local api = require("nvim-tree.api")
+      local api = require 'nvim-tree.api'
 
       local function opts(desc)
-        return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+        return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
       end
 
       -- copy default mappings here from defaults in next section
-      vim.keymap.set("n", "l", api.node.open.edit, opts("Open"))
-      vim.keymap.set("n", "<CR>", api.node.open.edit, opts("Open"))
+      vim.keymap.set('n', 'l', api.node.open.edit, opts 'Open')
+      vim.keymap.set('n', '<CR>', api.node.open.edit, opts 'Open')
       -- ---
       -- -- OR use all default mappings
       api.config.mappings.default_on_attach(bufnr)
 
-      vim.keymap.set("n", "ff", "<cmd>Telescope find_files<cr>", opts("Open"))
+      vim.keymap.set('n', 'ff', '<cmd>Telescope find_files<cr>', opts 'Open')
       --
       -- -- remove a default
       -- vim.keymap.del("n", "<C-]>", { buffer = bufnr })
@@ -33,7 +33,7 @@ return {
     vim.g.loaded_netrw = 1
     vim.g.loaded_netrwPlugin = 1
 
-    nvimtree.setup({
+    nvimtree.setup {
       on_attach = my_on_attach,
       view = {
         width = 45,
@@ -71,17 +71,17 @@ return {
         dotfiles = false,
         git_clean = false,
         no_buffer = false,
-        custom = { ".DS_Store", "node_modules" },
+        custom = { '.DS_Store', 'node_modules' },
       },
       git = {
         ignore = false,
       },
-    })
+    }
 
     -- set keymaps
     local keymap = vim.keymap -- for conciseness
 
-    keymap.set("n", "<leader>e", "<cmd>NvimTreeOpen<CR>", { desc = "Open file explorer" }) -- toggle file explorer
-    keymap.set("n", "t", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" }) -- toggle file explorer
+    keymap.set('n', '<leader>e', '<cmd>NvimTreeOpen<CR>', { desc = 'Open file explorer' }) -- toggle file explorer
+    keymap.set('n', 't', '<cmd>NvimTreeToggle<CR>', { desc = 'Toggle file explorer' }) -- toggle file explorer
   end,
 }
