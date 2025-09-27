@@ -3,6 +3,9 @@ vim.g.mapleader = ' '
 local keymap = vim.keymap.set -- for conciseness
 local opts = { noremap = true, silent = true }
 
+-- paste without yanking
+keymap('v', 'p', '"_dP', { desc = 'Paste without yanking replaced text' })
+
 keymap('i', 'jk', '<ESC>', { desc = 'Exit insert mode with jk', silent = true })
 keymap('i', 'kj', '<ESC>', { desc = 'Exit insert mode with kj', silent = true })
 
