@@ -36,12 +36,5 @@ return {
       python = { 'isort', 'black' },
       go = { 'crlfmt' },
     },
-    formatters = {
-      tombi = {
-        command = 'tombi',
-        args = { '-' }, -- or adjust if tombi doesn’t read from stdin
-        stdin = true,
-      },
-    },
   },
 }
