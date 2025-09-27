@@ -76,6 +76,8 @@ return {
     local tools = {
       'stylua',
       'taplo',
+      'prettierd',
+      'biome',
     }
 
     vim.api.nvim_create_autocmd('LspAttach', {
