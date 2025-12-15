@@ -36,12 +36,15 @@ return {
     nvimtree.setup {
       on_attach = my_on_attach,
       view = {
-        width = 45,
+        width = 50,
         relativenumber = false,
       },
       update_focused_file = {
         enable = true,
+        update_root = true, -- keep tree root in sync with focused file
       },
+      respect_buf_cwd = true, -- use buffer's cwd for tree actions
+      sync_root_with_cwd = true,
       -- change folder arrow icons
       renderer = {
         indent_markers = {

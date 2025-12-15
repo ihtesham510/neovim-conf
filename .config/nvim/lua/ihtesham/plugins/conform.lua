@@ -10,28 +10,36 @@ return {
         return nil
       else
         return {
-          timeout_ms = 500,
+          timeout_ms = 1000,
           lsp_format = 'fallback',
         }
       end
     end,
     notify_no_formatters = true,
+    formatters = {
+      biome = {
+        require_cmd = true,
+      },
+      prettierd = {
+        require_cmd = true,
+      },
+    },
     formatters_by_ft = {
-      typescript = { 'prettierd', 'prettier' },
-      typescriptreact = { 'prettierd', 'prettier' },
-      javascript = { 'prettierd', 'prettier' },
-      javascriptreact = { 'prettierd', 'prettier' },
+      typescript = { 'prettierd' },
+      typescriptreact = { 'prettierd' },
+      javascript = { 'prettierd' },
+      javascriptreact = { 'prettierd' },
       sql = { 'sqlfmt' },
       rust = { 'rustfmt' },
       toml = { 'taplo' },
-      svelte = { 'prettier' },
-      css = { 'prettier' },
-      html = { 'prettier' },
-      json = { 'prettier' },
-      yaml = { 'prettier' },
-      markdown = { 'prettier' },
-      graphql = { 'prettier' },
-      liquid = { 'prettier' },
+      svelte = { 'prettierd' },
+      css = { 'prettierd' },
+      html = { 'prettierd' },
+      json = { 'prettierd' },
+      yaml = { 'prettierd' },
+      markdown = { 'prettierd' },
+      graphql = { 'prettierd' },
+      liquid = { 'prettierd' },
       lua = { 'stylua' },
       python = { 'isort', 'black' },
       go = { 'crlfmt' },

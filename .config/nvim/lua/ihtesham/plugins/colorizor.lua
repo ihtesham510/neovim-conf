@@ -1,5 +1,8 @@
 return {
   'NvChad/nvim-colorizer.lua',
+  dependencies = {
+    'eero-lehtinen/oklch-color-picker.nvim',
+  },
   event = { 'BufEnter' },
   config = function()
     require('colorizer').setup {

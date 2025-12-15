@@ -21,6 +21,7 @@ return {
       defaults = {
         color_devicons = true,
         initial_mode = 'normal',
+        file_ignore_patterns = { '.git', 'target', 'node_modules' },
         prompt_prefix = '     ',
         selection_caret = ' ❯ ',
         sorting_strategy = 'ascending',

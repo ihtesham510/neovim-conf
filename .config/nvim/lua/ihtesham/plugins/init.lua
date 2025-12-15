@@ -1,7 +1,8 @@
 return {
-  'NMAC427/guess-indent.nvim',
+  { 'NMAC427/guess-indent.nvim', event = 'BufEnter' },
   {
     'MeanderingProgrammer/render-markdown.nvim',
+    evnet = 'VeryLazy',
     opts = {},
     dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' },
   },
