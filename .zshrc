@@ -103,6 +103,8 @@ alias zshconfig="nvim ~/.zshrc"
 alias sourcezsh="source ~/.zshrc"
 alias vi="nvim"
 alias lg="lazygit"
+alias gl="lazygit"
+alias ld="lazydocker"
 alias ohmyzsh="mate ~/.oh-my-zsh"
 alias anime="cd /mnt/c/Users/Ihtesham\ ul\ haq/Videos/anime"
 alias gs="git status"
@@ -110,7 +112,7 @@ alias g="git"
 alias gp="git pull"
 # eza
 alias ls="eza --icons=always"
-alias ll="eza -l -B --no-time --no-user --no-filesize --no-permissions --icons=always --git-repos-no-status --git"
+alias ll="eza -l -B --no-time --no-user --no-filesize --no-permissions --icons=always --git-repos-no-status --git -la"
 #
 # nvm
 export NVM_DIR="$HOME/.nvm"
