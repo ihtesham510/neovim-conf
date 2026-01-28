@@ -79,6 +79,7 @@ return {
       'taplo',
       'prettierd',
       'biome',
+      'clang-format',
     }
 
     -- Setup Mason and Mason-LSPConfig
