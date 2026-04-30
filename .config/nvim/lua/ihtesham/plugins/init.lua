@@ -1,4 +1,6 @@
 return {
+  'nvim-lua/plenary.nvim', -- lua functions that many plugins use
+  'christoomey/vim-tmux-navigator', -- tmux & split window navigation
   { 'NMAC427/guess-indent.nvim', event = 'BufEnter' },
   {
     'MeanderingProgrammer/render-markdown.nvim',
@@ -9,48 +11,6 @@ return {
   { -- Collection of various small independent plugins/modules
     'echasnovski/mini.nvim',
     event = 'VeryLazy',
-  },
-  {
-    'windwp/nvim-ts-autotag',
-    ft = {
-      'html',
-      'javascript',
-      'typescript',
-      'javascriptreact',
-      'typescriptreact',
-      'svelte',
-      'vue',
-      'tsx',
-      'jsx',
-      'rescript',
-      'xml',
-      'php',
-      'markdown',
-      'glimmer',
-      'handlebars',
-      'hbs',
-    },
-    opts = {
-      enable = true,
-      filetypes = {
-        'html',
-        'javascript',
-        'typescript',
-        'javascriptreact',
-        'typescriptreact',
-        'svelte',
-        'vue',
-        'tsx',
-        'jsx',
-        'rescript',
-        'xml',
-        'php',
-        'markdown',
-        'glimmer',
-        'handlebars',
-        'hbs',
-      },
-    },
   },
   {
     'akinsho/toggleterm.nvim',
