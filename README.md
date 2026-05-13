@@ -20,9 +20,9 @@
 
 ## 📸 Screenshots
 
-![Dashboard](/assets/Screenshot (1).png)
-![workspace](/assets/Screenshot (2).png)
-![LazyGit](/assets/Screenshot (3).png)
+![Dashboard](./assets/Screenshot (1).png)
+![workspace](./assets/Screenshot (2).png)
+![LazyGit](./assets/Screenshot (3).png)
 
 ---
 
