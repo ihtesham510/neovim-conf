@@ -62,7 +62,21 @@ dotfiles/
 
 ## 🧠 Neovim
 
-> Built on top of [LunarVim/Neovim-from-scratch](https://github.com/LunarVim/Neovim-from-scratch) — a fully Lua-based Neovim config designed to be readable and educational.
+> Built on top of [nvim-lua/kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim) — a fully Lua-based Neovim config designed to be readable and educational.
+
+### Dependencies
+
+- rustc
+- cargo
+- ripgrep
+- grep
+- gcc
+- bun
+- nodejs (v20 or above)
+- nvm
+- fzf
+- unzip
+- luarocks
 
 ### 🔌 Plugins
 
@@ -76,7 +90,6 @@ dotfiles/
 | `kyazdani42/nvim-web-devicons`                | File type icons for the UI                                            |
 | `kyazdani42/nvim-tree.lua`                    | File explorer tree                                                    |
 | `akinsho/bufferline.nvim`                     | Buffer tabs at the top                                                |
-| `moll/vim-bbye`                               | Close buffers without closing windows                                 |
 | `nvim-lualine/lualine.nvim`                   | Blazing fast status line in Lua                                       |
 | `akinsho/toggleterm.nvim`                     | Integrated floating/split terminal                                    |
 | `ahmedkhalf/project.nvim`                     | Project root detection and management                                 |
@@ -85,8 +98,7 @@ dotfiles/
 | `goolord/alpha-nvim`                          | Customizable start screen / dashboard                                 |
 | `folke/which-key.nvim`                        | Popup showing available keybindings                                   |
 | **Colorschemes**                              |                                                                       |
-| `lunarvim/colorschemes`                       | LunarVim colorscheme collection                                       |
-| `lunarvim/darkplus.nvim`                      | Dark+ VSCode-inspired colorscheme                                     |
+| `catppuccin/nvim`                             | Cattppuccin colorscheme collection                                    |
 | **Completion (cmp)**                          |                                                                       |
 | `hrsh7th/nvim-cmp`                            | Completion engine                                                     |
 | `hrsh7th/cmp-buffer`                          | Completions from current buffer                                       |
@@ -102,7 +114,6 @@ dotfiles/
 | `neovim/nvim-lspconfig`                       | Quickstart configs for built-in LSP client                            |
 | `williamboman/mason.nvim`                     | Portable LSP/linter/formatter installer                               |
 | `williamboman/mason-lspconfig.nvim`           | Bridge between Mason and lspconfig                                    |
-| `jose-elias-alvarez/null-ls.nvim`             | Inject formatters & linters as LSP sources                            |
 | `RRethy/vim-illuminate`                       | Highlight other uses of the word under cursor                         |
 | **Telescope**                                 |                                                                       |
 | `nvim-telescope/telescope.nvim`               | Fuzzy finder over everything                                          |
@@ -127,15 +138,6 @@ dotfiles/
 | `Ctrl-j`   | Normal | Move to window below |
 | `Ctrl-k`   | Normal | Move to window above |
 | `Ctrl-l`   | Normal | Move to right window |
-
-#### 📐 Window Resizing
-
-| Keybinding   | Mode   | Action                 |
-| ------------ | ------ | ---------------------- |
-| `Ctrl-Up`    | Normal | Decrease window height |
-| `Ctrl-Down`  | Normal | Increase window height |
-| `Ctrl-Left`  | Normal | Decrease window width  |
-| `Ctrl-Right` | Normal | Increase window width  |
 
 #### 📄 Buffer Management
 
@@ -275,9 +277,21 @@ nvim +PackerSync
 
 ---
 
+## Others
+
+| Item                     | Description                                                  |
+| ------------------------ | ------------------------------------------------------------ |
+| Jetbrains nerd font      | nerd fonts for terminal                                      |
+| HomeBrew                 | Package Manger for install pacakges (neovim ,fzf etc.)       |
+| zsh                      | shell                                                        |
+| oh my zsh                | for better looks and more features (mostly default settings) |
+| windows terminal preview | windows terminal preview for better termnal experience       |
+
+---
+
 ## 🎨 Colorscheme
 
-The config ships with the **darkplus.nvim** theme (VSCode Dark+ inspired) along with the full LunarVim colorscheme collection for easy switching.
+The neovim and windows terminal both use [Cattppuccin](https://catppuccin.com) colorscheme the wallpapers is also selected from [awsome catppuccin wallpapers](https://github.com/orangci/walls-catppuccin-mocha)
 
 ---
 
