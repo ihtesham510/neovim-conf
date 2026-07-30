@@ -25,6 +25,8 @@ return {
       },
     },
     formatters_by_ft = {
+      dockerfile = { 'dockerfmt' },
+      cpp = { 'clang-format' },
       typescript = { 'prettier', 'biome', 'biome-organize-imports' },
       typescriptreact = { 'prettier', 'biome', 'biome-organize-imports' },
       javascript = { 'prettier', 'biome', 'biome-organize-imports' },
