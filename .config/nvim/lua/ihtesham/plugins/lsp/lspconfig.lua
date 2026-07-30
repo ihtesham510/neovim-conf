@@ -10,6 +10,7 @@ return {
   config = function()
     local servers = {
       sqlls = {},
+      pyright = {},
       clangd = {},
       dockerls = {},
       docker_compose_language_service = {},
@@ -79,6 +80,8 @@ return {
       'taplo',
       'prettierd',
       'biome',
+      'black',
+      'pylint',
       'clang-format',
     }
 
