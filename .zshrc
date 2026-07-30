@@ -110,6 +110,7 @@ alias anime="cd /mnt/c/Users/Ihtesham\ ul\ haq/Videos/anime"
 alias gs="git status"
 alias g="git"
 alias gp="git pull"
+alias python="python3"
 # eza
 alias ls="eza --icons=always"
 alias ll="eza -l -B --no-time --no-user --no-filesize --no-permissions --icons=always --git-repos-no-status --git -la"
