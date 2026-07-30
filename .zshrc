@@ -153,3 +153,9 @@ bindkey -r '^R'
 bindkey -r '\er'
 bindkey '\er' fzf-history-widget 
 export FZF_DEFAULT_OPTS="--bind 'alt-,:up,alt-.:down'"
+
+. "$HOME/.local/bin/env"
+
+
+# Added by Antigravity CLI installer
+export PATH="/home/ihtesham510/.local/bin:$PATH"
