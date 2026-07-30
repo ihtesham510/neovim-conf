@@ -1,13 +1,15 @@
 return {
   'nvim-treesitter/nvim-treesitter',
   event = { 'BufReadPre', 'BufNewFile' },
+  branch = 'master',
   build = ':TSUpdate',
   config = function()
     -- import nvim-treesitter plugin
-    local treesitter = require 'nvim-treesitter'
+    local treesitter = require 'nvim-treesitter.config'
 
     -- configure treesitter
     treesitter.setup { -- enable syntax highlighting
+      auto_install = true,
       highlight = {
         enable = true,
       },
@@ -19,13 +21,21 @@ return {
         'javascript',
         'typescript',
         'tsx',
+        'yaml',
         'html',
         'css',
         'prisma',
         'markdown',
+        'markdown_inline',
+        'svelte',
+        'graphql',
         'bash',
         'lua',
+        'vim',
         'dockerfile',
+        'gitignore',
+        'query',
+        'vimdoc',
         'c',
       },
       incremental_selection = {
