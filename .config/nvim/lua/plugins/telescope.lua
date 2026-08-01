@@ -17,6 +17,13 @@ return {
       desc = "Find keymaps",
     },
     {
+      "ff",
+      function()
+        require("telescope.builtin").find_files({})
+      end,
+      desc = "Find Files",
+    },
+    {
       "<leader>ff",
       function()
         require("telescope.builtin").find_files({})
@@ -31,7 +38,21 @@ return {
       desc = "Find Files",
     },
     {
+      "sd",
+      function()
+        require("telescope.builtin").diagnostics({})
+      end,
+      desc = "Find Files",
+    },
+    {
       "<leader>sr",
+      function()
+        require("telescope.builtin").oldfiles({})
+      end,
+      desc = "Find Files",
+    },
+    {
+      "sr",
       function()
         require("telescope.builtin").oldfiles({})
       end,
@@ -46,6 +67,13 @@ return {
     },
     {
       "<leader>ss",
+      function()
+        require("telescope.builtin").builtin({})
+      end,
+      desc = "Telescope Builtin",
+    },
+    {
+      "ss",
       function()
         require("telescope.builtin").builtin({})
       end,
@@ -116,7 +144,19 @@ return {
       layout_strategy = "horizontal",
       color_devicons = true,
       initial_mode = "normal",
-      layout_config = { prompt_position = "top" },
+      layout_config = {
+        horizontal = {
+          prompt_position = "top",
+          preview_width = 0.55,
+          results_width = 0.8,
+        },
+        vertical = {
+          mirror = false,
+        },
+        width = 0.87,
+        height = 0.80,
+        preview_cutoff = 60,
+      },
       winblend = 0,
       mappings = {
         i = {
