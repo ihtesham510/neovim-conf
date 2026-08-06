@@ -38,8 +38,6 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.tailwind" },
     { import = "lazyvim.plugins.extras.lang.sql" },
     -- editor
-    { import = "lazyvim.plugins.extras.editor.neo-tree" },
-    { import = "lazyvim.plugins.extras.editor.inc-rename" },
     { import = "lazyvim.plugins.extras.ui.alpha" },
     { import = "lazyvim.plugins.extras.coding.nvim-cmp" },
     { import = "plugins" },
