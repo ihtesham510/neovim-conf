@@ -10,6 +10,13 @@ return {
           { "<leader>ca", vim.lsp.buf.code_action, desc = "Code Action", has = "codeAction" },
           { "ca", vim.lsp.buf.code_action, desc = "Code Action", has = "codeAction" },
           { "<leader>d", vim.diagnostic.open_float, desc = "Open Diagnostics Dialog" },
+          {
+            "<leader>rn",
+            vim.lsp.buf.rename,
+            expr = true,
+            desc = "Rename (inc-rename.nvim)",
+            has = "rename",
+          },
         },
       },
     },
