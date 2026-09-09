@@ -1,0 +1,7 @@
+.config/*
+.local/*
+!.config/nvim
+!.config/hypr
+!.config/rofi
+!.config/waybar
+!.local/share/rofi/themes

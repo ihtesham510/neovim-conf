@@ -1,0 +1,95 @@
+
+@define-color highlight rgb(205, 214, 244);
+@define-color dark-9 rgb(17, 17, 27);
+@define-color dark-8 rgb(24, 24, 37);
+@define-color dark-7 rgb(30, 30, 46);
+@define-color dark-6 rgb(49, 50, 68);
+@define-color dark-5 rgb(69, 71, 90);
+
+* {
+  /* `otf-font-awesome` is required to be installed for icons */
+  font-family: JetBrainsMono Nerd Font Propo;
+  font-size: 14px;
+}
+
+window#waybar {
+  background-color: transparent;
+  color: white;
+}
+
+#workspaces {
+  margin: 0px 18px 0px 4px;
+}
+
+#workspaces button {
+  padding: 3px;
+  margin: 7px 0px 7px 7px;
+  background: transparent;
+  border-radius: 2px;
+  color: white;
+}
+
+#workspaces button.active {
+  background: @highlight;
+  color: black;
+  font-weight: 700;
+}
+
+#submap,
+#tray,
+#battery,
+#bluetooth,
+#network,
+#cpu,
+#clock,
+#memory,
+#volume {
+  border-radius: 8px;
+  padding: 5px 8px;
+  background: @dark-7;
+  margin: 5px 10px 5px 0px;
+}
+
+#submap,
+#workspaces button.urgent {
+  background: rgba(227, 81, 73, 1);
+  color: @dark-9;
+}
+
+#pulseaudio-slider {
+  padding: 0px;
+  margin: 0px;
+  margin-left: 8px;
+}
+
+#pulseaudio-slider slider {
+  all: unset;
+  min-height: 0;
+  min-width: 0;
+  opacity: 0;
+  background-image: none;
+  border: none;
+  box-shadow: none;
+}
+
+#pulseaudio-slider trough {
+  min-height: 8px;
+  min-width: 75px;
+  border-radius: 5px;
+  background: @dark-7;
+}
+
+#pulseaudio-slider highlight {
+  min-width: 10px;
+  border-radius: 5px;
+  background: @highlight;
+}
+
+tooltip {
+  background: @dark-9;
+  border-radius: 5px;
+}
+
+tooltip label {
+  color: white;
+}
