@@ -3,5 +3,11 @@
 !.config/nvim
 !.config/hypr
 !.config/rofi
+!.config/ghostty
 !.config/waybar
+
+!.local/share
+.local/share/*
+!.local/share/rofi
+.local/share/rofi/*
 !.local/share/rofi/themes
