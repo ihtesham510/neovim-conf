@@ -46,6 +46,8 @@ local launcher = "rofi -show drun -show-icons"
 local runner = "rofi -show run"
 
 local status_bar = "waybar"
+local wallpaper_manager = "awww-daemon"
+local playerctl_daemon = "playerctld daemon"
 
 -------------------
 ---- AUTOSTART ----
@@ -58,6 +60,8 @@ local status_bar = "waybar"
 --
 hl.on("hyprland.start", function()
 	hl.exec_cmd(status_bar)
+	hl.exec_cmd(wallpaper_manager)
+	hl.exec_cmd(playerctl_daemon)
 end)
 
 -------------------------------
@@ -271,6 +275,7 @@ hl.bind(mainMod .. " + W", hl.dsp.window.close())
 
 hl.bind("ALT" .. " + Space", hl.dsp.exec_cmd(launcher))
 hl.bind(superSecondMod .. " + Space", hl.dsp.exec_cmd(runner))
+hl.bind(superSecondMod .. " + j", hl.dsp.exec_cmd("exec ~/.config/rofi/wallpaper_changer.sh"))
 
 -- closeWindowBind:set_enabled(false)
 hl.bind(
