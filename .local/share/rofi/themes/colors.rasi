@@ -1,0 +1,49 @@
+*{
+    /* ── Core Neutral Palette ───────────────── */
+
+    base:           #1e1e2e;
+    mantle:         #181825;
+    crust:          #11111b;
+
+    surface0:       #313244;
+    surface1:       #45475a;
+    surface2:       #585b70;
+
+    overlay0:       #6c7086;
+
+    subtext0:       #a6adc8;
+    text:           #cdd6f4;
+
+    /* ── Soft Neutral Accents ───────────────── */
+
+    accent:         #b4befe;   /* lavender */
+    accent2:        #cba6f7;   /* mauve */
+
+    red:            #f38ba8;
+    yellow:         #f9e2af;
+    green:          #a6e3a1;
+    blue:           #89b4fa;
+
+    /* ── Semantic Colors ────────────────────── */
+
+    bg-main:        rgba(30, 30, 46, 1);      /* base */
+
+    bg-alt:         rgba(24, 24, 37, 1);      /* mantle */
+
+    bg-panel:       rgba(49, 50, 68, 1);      /* surface0 */
+
+    bg-hover:       rgba(205, 214, 244, 0.06);   /* text-tinted */
+
+    bg-selected:    rgba(205, 214, 244, 0.10);   /* text-tinted */
+
+    fg-main:        #cdd6f4;   /* text */
+
+    fg-dim:         #a6adc8;   /* subtext0 */
+
+    fg-selected:    #cdd6f4;   /* text */
+
+    border-col:     rgba(205, 214, 244, 0.08);   /* text-tinted */
+
+    urgent-col:     #f38ba8;   /* red */
+} 
+
