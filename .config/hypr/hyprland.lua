@@ -276,7 +276,7 @@ hl.bind(mainMod .. " + W", hl.dsp.window.close())
 
 hl.bind("ALT" .. " + Space", hl.dsp.exec_cmd(launcher))
 hl.bind(superSecondMod .. " + Space", hl.dsp.exec_cmd(runner))
-hl.bind(superSecondMod .. " + j", hl.dsp.exec_cmd("exec ~/.config/rofi/wallpaper_changer.sh"))
+hl.bind(superSecondMod .. " + o", hl.dsp.exec_cmd("exec ~/.config/rofi/wallpaper_changer.sh"))
 
 -- closeWindowBind:set_enabled(false)
 hl.bind(
@@ -314,8 +314,8 @@ hl.bind(superSecondMod .. " + F", hl.dsp.window.fullscreen({ mode = "maximized" 
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
 for i = 1, 10 do
 	local key = i % 10 -- 10 maps to key 0
-	hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
-	hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
+	hl.bind("ALT" .. " + " .. key, hl.dsp.focus({ workspace = i }))
+	hl.bind(superSecondMod .. " + " .. key, hl.dsp.window.move({ workspace = i }))
 end
 
 hl.bind(superSecondMod .. " + n", hl.dsp.focus({ workspace = "e+1" }))
